@@ -1,41 +1,46 @@
 from tkinter import *
-import tkinter.messagebox
+import math as mathtools
 
-def beenClicked():
-    radioValue = relStatus.get()
-    tkinter.messagebox.showinfo("You clicked", radioValue)
-    return
 
-def changeLabel():
-    name = "Thanks for the click " + yourName.get()
-    labelText.set(name)
-    yourName.delete(0, END)
-    yourName.insert(0, "My name is Jesse")
-    return
+def createWidgets(root, varlist=[]):
+    root.title('infogrid with math calculations')
+    root.grid()
+    font=("Calibri", 12)
+    # label,place,inputplace,math
+    info=(
+        (" ",(0,0),None),
+        ("Multiply by 2:",(1,1),(1,2)),
+        ("Divide by 2:", (2,1),(2,2)),
+        ("",(3,1),None),
+        ("Add 2:",(4,1),(4,2)),
+        ("Subtract 2:",(5,1),(5,2)),
+        ("Power of 2:",(6,1),(6,2)),
+        ("",(7,1),None),
+        ("Square Root:",(8,1),(8,2)),
+        ("Multiply by 2 Again:",(9,1),(9,2)),
+        (" ",(10,3),None),
+        )
 
-app = Tk()
-app.title("GUI Example")
-app.geometry('450x300')
 
-labelText = StringVar()
-labelText.set("Click button")
-label1 = Label(app, textvariable=labelText, height=4)
-label1.pack()
+    for text,lpos,ipos in info:
+        if text:
+            var=StringVar()
+            varlist.append(var)
+            var.set('')
 
-checkBoxVal = IntVar()
-checkBox1 = Checkbutton(app, variable=checkBoxVal, text="Happy?")
-checkBox1.pack()
+        Label(root,text=text,font=font).grid(row=lpos[0],column=lpos[1])
 
-custName = StringVar(None)
-yourName = Entry(app, textvariable=custName)
-yourName.pack()
+        if ipos:
+            Entry(root,textvariable=var,font=font).grid(row=ipos[0],column=ipos[1])
+            list_of_widgets.append(ipos)
+            list_of_widgets = []
 
-relStatus = StringVar()
-relStatus.set(None)
-radio1 = Radiobutton(app, text="Single", value="Single", variable = relStatus, command=beenClicked).pack()
-radio1 = Radiobutton(app, text="Married", value="Married", variable = relStatus, command=beenClicked).pack()
 
-button1 = Button(app, text="Click Here", width=20,command=changeLabel)
-button1.pack(side='bottom',padx=15,pady=15)
+#    for ipos in list_of_widgets:
+#        if ipos:
+#            Entry(root,status='disabled').pack(side=RIGHT)#,textvariable=eval(list_of_widgets[x,y].get() && mathlist))
 
-app.mainloop()
+root=Tk()
+vl=[]
+createWidgets(root,vl)
+root.mainloop()
