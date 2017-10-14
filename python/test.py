@@ -1,6 +1,24 @@
 from tkinter import *
 import math as mathtools
 
+def callback(field_name, string_var):
+    string_val = string_var.get();
+    print(field_name, string_val)
+    value = int(string_val);
+
+    if field_name == 'Add 2:' and value :
+        print('post', field_name, value + 2)
+
+def validateNumeric(new_value):
+    print(new_value)
+    if new_value == "":
+        return True
+    try:
+        int(new_value)
+        return True
+    except ValueError:
+        return False
+
 
 def createWidgets(root, varlist=[]):
     root.title('infogrid with math calculations')
@@ -21,26 +39,28 @@ def createWidgets(root, varlist=[]):
         (" ",(10,3),None),
         )
 
-
     list_of_widgets = []
     for text,lpos,ipos in info:
+
         if text:
-            var=IntVar()
+            var=StringVar(0)
             varlist.append(var)
             var.set('')
+            var.trace("w", lambda tclname, tclindex, mode, var=var, name=text: callback(name, var))
 
-        Label(root,text=text,font=font).grid(row=lpos[0],column=lpos[1])
+        Label(root, text=text, font=font).grid(row=lpos[0], column=lpos[1])
 
         if ipos:
-            Entry(root,textvariable=var,font=font).grid(row=ipos[0],column=ipos[1])
+            vcmd = (root.register(validateNumeric), '%P')
+            Entry(root, textvariable=var, font=font, validate="key", vcmd=vcmd).grid(row=ipos[0], column=ipos[1])
             list_of_widgets.append(ipos)
 
     print(list_of_widgets)
 
-    def numberget(idx):
-        print(list_of_widgets[idx]).get()
-
-    numberget(1)
+    # def numberget(idx):
+    #     print(list_of_widgets[idx]).get()
+    #
+    # numberget(1)
 
 
         #def callback():
