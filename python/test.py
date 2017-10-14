@@ -25,7 +25,7 @@ def createWidgets(root, varlist=[]):
     list_of_widgets = []
     for text,lpos,ipos in info:
         if text:
-            var=StringVar()
+            var=IntVar()
             varlist.append(var)
             var.set('')
 
@@ -36,6 +36,17 @@ def createWidgets(root, varlist=[]):
             list_of_widgets.append(ipos)
 
     print(list_of_widgets)
+
+    def numberget(idx):
+        print(list_of_widgets[idx]).get()
+
+    numberget(1)
+
+
+        #def callback():
+            #print e.get()
+        #b = Button(master, text="get", width=10, command=callback)
+
 
 # access list of widgets below this line
 
