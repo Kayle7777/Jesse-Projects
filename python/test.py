@@ -3,7 +3,6 @@ import math as mathtools
 
 def callback(field_name, string_var):
     string_val = string_var.get();
-    print(field_name, string_val)
     value = int(string_val);
 
     if field_name == 'Add 2:' and value :
@@ -24,7 +23,7 @@ def createWidgets(root, varlist=[]):
     root.title('infogrid with math calculations')
     root.grid()
     font=("Calibri", 12)
-    # label,place,inputplace,math
+    # label,place,inputplace
     info=(
         (" ",(0,0),None),
         ("Multiply by 2:",(1,1),(1,2)),
@@ -37,6 +36,15 @@ def createWidgets(root, varlist=[]):
         ("Square Root:",(8,1),(8,2)),
         ("Multiply by 2 Again:",(9,1),(9,2)),
         (" ",(10,3),None),
+        ("Test",(1,4),(1,5)),
+        ("Test",(2,4),(2,5)),
+        (" ",(3,4),(None)),
+        ("Test",(4,4),(4,5)),
+        ("Test",(5,4),(5,5)),
+        ("Test",(6,4),(6,5)),
+        (" ",(7,4),(None)),
+        ("Test",(8,4),(8,5)),
+        ("Test",(9,4),(9,5)),
         )
 
     list_of_widgets = []
@@ -48,7 +56,14 @@ def createWidgets(root, varlist=[]):
             var.set('')
             var.trace("w", lambda tclname, tclindex, mode, var=var, name=text: callback(name, var))
 
-        Label(root, text=text, font=font).grid(row=lpos[0], column=lpos[1])
+        varx=None
+        if lpos[1] >= 4:
+            if text != " ":
+                varx=None
+            else:
+                varx=25
+
+        Label(root, text=text, font=font).grid(row=lpos[0], column=lpos[1],padx=varx)
 
         if ipos:
             vcmd = (root.register(validateNumeric), '%P')
@@ -57,22 +72,7 @@ def createWidgets(root, varlist=[]):
 
     print(list_of_widgets)
 
-    # def numberget(idx):
-    #     print(list_of_widgets[idx]).get()
-    #
-    # numberget(1)
-
-
-        #def callback():
-            #print e.get()
-        #b = Button(master, text="get", width=10, command=callback)
-
-
-# access list of widgets below this line
-
-#    for ipos in list_of_widgets:
-#        if ipos:
-#            Entry(root,status='disabled').pack(side=RIGHT)#,textvariable=eval(list_of_widgets[x,y].get() && mathlist))
+#    Label(root, text=" ").grid(row=0, column=3, rowspan=9, padx=25)
 
 root=Tk()
 vl=[]
