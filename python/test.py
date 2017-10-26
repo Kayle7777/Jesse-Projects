@@ -1,6 +1,10 @@
 from tkinter import *
 import math as mathtools
 
+root=Tk()
+frame1 = Frame(root, bd=10,padx=15,pady=15,bg="blue")
+frame1.grid(row=0,column=0,rowspan=9,columnspan=2)
+
 def callback(field_name, string_var):
     string_val = string_var.get();
     value = int(string_val);
@@ -47,7 +51,15 @@ def createWidgets(root, varlist=[]):
         ("Test",(9,4),(9,5)),
         )
 
+#    columns=[]
+#    for x in range(20):
+#        y = info[x[1[1]]]
+#        columns.append()
+
     list_of_widgets = []
+
+
+
     for text,lpos,ipos in info:
 
         if text:
@@ -56,14 +68,7 @@ def createWidgets(root, varlist=[]):
             var.set('')
             var.trace("w", lambda tclname, tclindex, mode, var=var, name=text: callback(name, var))
 
-        varx=None
-        if lpos[1] >= 4:
-            if text != " ":
-                varx=None
-            else:
-                varx=25
-
-        Label(root, text=text, font=font).grid(row=lpos[0], column=lpos[1],padx=varx)
+        Label(root, text=text, font=font).grid(row=lpos[0], column=lpos[1])
 
         if ipos:
             vcmd = (root.register(validateNumeric), '%P')
@@ -72,9 +77,9 @@ def createWidgets(root, varlist=[]):
 
     print(list_of_widgets)
 
+
 #    Label(root, text=" ").grid(row=0, column=3, rowspan=9, padx=25)
 
-root=Tk()
 vl=[]
 createWidgets(root,vl)
 root.mainloop()
