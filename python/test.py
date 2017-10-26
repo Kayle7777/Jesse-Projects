@@ -51,11 +51,11 @@ def createWidgets(root, varlist=[]):
         ("Test",(9,4),(9,5)),
         )
 
-#    columns=[]
-#    for x in range(20):
-#        y = info[x[1[1]]]
-#        columns.append()
-
+    columns=[]
+    for x in range(20):
+        y = info[x][1][1]
+        columns.append(y)
+    print(columns)
     list_of_widgets = []
 
 
