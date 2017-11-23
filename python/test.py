@@ -51,11 +51,15 @@ def createWidgets(root, varlist=[]):
         ("Test",(9,4),(9,5)),
         )
 
-    columns=[]
+    columnslpos=[]
+    columnsipos=[]
     for x in range(20):
         y = info[x][1][1]
-        columns.append(y)
-    print(columns)
+        columnslpos.append(y)
+        z = lambda x: filter(info[x][2][1] == None)
+        columnsipos.append(z)
+    print(columnslpos)
+    print(columnsipos)
     list_of_widgets = []
 
 
