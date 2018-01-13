@@ -51,18 +51,6 @@ def createWidgets(root, varlist=[]):
         ("Test",(9,4),(9,5)),
         )
 
-    columnslpos=[]
-    columnsipos=[]
-    for x in range(20):
-        y = info[x][1][1]
-        columnslpos.append(y)
-        z = lambda x: filter(info[x][2][1] == None)
-        columnsipos.append(z)
-    print(columnslpos)
-    print(columnsipos)
-    list_of_widgets = []
-
-
 
     for text,lpos,ipos in info:
 
@@ -82,7 +70,6 @@ def createWidgets(root, varlist=[]):
     print(list_of_widgets)
 
 
-#    Label(root, text=" ").grid(row=0, column=3, rowspan=9, padx=25)
 
 vl=[]
 createWidgets(root,vl)

@@ -18,7 +18,7 @@ for a in enumerate(gridloc):
 buttonList = [i[0] for i in blista]
 print(buttonList)
 
-def callback:
-    for x in ButtonList
+#def callback:
+#    for x in ButtonList
 
 root.mainloop()
