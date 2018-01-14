@@ -1,8 +1,8 @@
 import random, json
 import jsonwriter as jw
 
-def randomizer(min, max):
+def r(min, max):
     return random.randint(min,max)
-print(randomizer(1,6))
+print(r(1,6))
 
-print(jw.jsonwriter('C:\\classes.json','class','name'))
+print(jw.jw('C:\\classes.json','class','name'))
