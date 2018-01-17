@@ -4,10 +4,8 @@ import jsonwriter as jw
 
 def roll(min, max):
     return random.randint(min,max)
-
 print(roll(1,6))
-stuff = []
 
-stuff.append(jw.jw('C:\\classes.json','class','name'))
+stuff = jw.jw('C:\\classes.json','class','name')
 
 print(stuff)
