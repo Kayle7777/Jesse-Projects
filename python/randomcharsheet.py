@@ -26,5 +26,5 @@ def rolljson(thing,min,max):
 classresult = rolljson("classes",1,11)
 raceresult = rolljson("races",1,14)
 
+print("You are a " + str(raceresult) + " " + str(classresult) + "!" + " " + "Your stats are as follows:\n")
 print(statslist)
-print("You are a " + str(raceresult) + " " + str(classresult) + "!")
