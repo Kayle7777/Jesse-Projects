@@ -11,5 +11,22 @@
 		"9" : "Rogue",
 		"10" : "Sorcerer",
 		"11" : "Warlock"
+	},
+
+	"races": {
+		"1" : "Dragonborn",
+		"2" : "Hill Dwarf",
+		"3" : "Mountain Dwarf",
+		"4" : "Drow",
+		"5" : "High Elf",
+		"6" : "Wood Elf",
+		"7" : "Forest Gnome",
+		"8" : "Rock Gnome",
+		"9" : "Half-Elf",
+		"10" : "Half-Orc",
+		"11" : "Lightfood Halfling",
+		"12" : "Stout Halfling",
+		"13" : "Human",
+		"14" : "Tiefling"
 		}
 }

@@ -3,13 +3,30 @@ import random, json, codecs
 def roll(min, max):
     return random.randint(min,max)
 
-file = 'C:\\Users\\Jesse\\Desktop\\projects\\python\\rollstuff.json'
+def statsroller():
+    diceroll = [random.randint(1,6),random.randint(1,6),random.randint(1,6),random.randint(1,6)]
+    diceroll.remove(min(diceroll))
+    diceroll = sum(diceroll)
+    return diceroll
 
-def rollclass(thing):
+statslist = []
+for x in range(6):
+    stats = ["STR","DEX","CON","INT","WIS","CHA"]
+    number = statsroller()
+    statslist.append([stats[x], number])
+
+file = 'rollstuff.json'
+
+def rolljson(thing,min,max):
     with codecs.open(file, 'r', 'utf-8-sig') as data_file:
         data = json.load(data_file)
-        n = roll(1,11)
+        n = roll(min,max)
         return data[str(thing)][str(n)]
-classresult = rollclass("classes")
+classresult = rolljson("classes",1,11)
+raceresult = rolljson("races",1,14)
 
-print("Your class is " + str(classresult) + "!")
+print(statslist)
+print("You are a " + str(raceresult) + " " + str(classresult) + "!")
+
+#if str(classresult) == "Fighter":
+#    print("This means you are a " + str(classresult))
