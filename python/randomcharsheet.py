@@ -1,11 +1,15 @@
-import random, json
-import jsonwriter as jw
-
+import random, json, codecs
 
 def roll(min, max):
     return random.randint(min,max)
-print(roll(1,6))
 
-stuff = jw.jw('C:\\classes.json','class','name')
+file = 'C:\\Users\\Jesse\\Desktop\\projects\\python\\rollstuff.json'
 
-print(stuff)
+def rollclass(thing):
+    with codecs.open(file, 'r', 'utf-8-sig') as data_file:
+        data = json.load(data_file)
+        n = roll(1,11)
+        return data[str(thing)][str(n)]
+classresult = rollclass("classes")
+
+print("Your class is " + str(classresult) + "!")
