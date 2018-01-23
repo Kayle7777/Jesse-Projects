@@ -8,10 +8,10 @@ def roll(min, max):
 def rollrace():
     with codecs.open(file, 'r', 'utf-8-sig') as data_file:
         data = json.load(data_file)
-        classpicks = []
+        rpicks = []
         for x in data["races"]:
-            classpicks.append(data["races"][x])
+            rpicks.append(data["races"][x])
         n = roll(1,14)
-        pick = classpicks[n]
+        pick = rpicks[n]
         return(pick)
 print(rollrace())
