@@ -27,7 +27,7 @@ classresult = rolljson("classes",1,11)
 raceresult = rolljson("races",1,14)
 
 print(statslist[0])
-if str(classresult) == "Mountain Dwarf" or str(classresult) == "Half-Orc" or str(classresult) "Dragonborn":
+if str(classresult) == "Mountain Dwarf" or str(classresult) == "Half-Orc" or str(classresult) == "Dragonborn":
     statslist[0][1] = statslist[0][1] + 2
 elif str(classresult) == "Human":
     statslist[0][1] = statslist[0][1] + 1
