@@ -1,0 +1,78 @@
+{
+	"classes": {
+		"1" : "Barbarian",
+		"2" : "Bard",
+		"3" : "Cleric",
+		"4" : "Druid",
+		"5" : "Fighter",
+		"6" : "Monk",
+		"7" : "Paladin",
+		"8" : "Ranger",
+		"9" : "Rogue",
+		"10" : "Sorcerer",
+		"11" : "Warlock"
+	},
+
+	"races": {
+		"Dragonborn":  {
+			"STR": 2,
+			"CHA": 1
+		},
+
+		"Hill Dwarf": {
+			"CON": 2,
+			"WIS": 1
+		},
+		"Mountain Dwarf": {
+			"STR": 2,
+			"CON": 2
+		},
+		"Drow": {
+			"DEX": 2,
+			"CHA": 1
+		},
+		"High Elf": {
+			"DEX": 2,
+			"INT": 1
+		},
+		"Wood Elf": {
+			"DEX": 2,
+			"WIS": 1
+		},
+		"Forest Gnome": {
+			"DEX": 1,
+			"INT": 2
+		},
+		"Rock Gnome": {
+			"CON": 1,
+			"INT": 2
+		},
+		"Half-Elf": {
+			"CHA": 2
+		},
+		"Half-Orc": {
+			"STR": 2,
+			"CON": 1
+		},
+		"Lightfood Halfling": {
+			"DEX": 2,
+			"CHA": 1
+		},
+		"Stout Halfling": {
+			"DEX": 2,
+			"CON": 1
+		},
+		"Human": {
+			"STR": 1,
+			"DEX": 1,
+			"CON": 1,
+			"INT": 1,
+			"WIS": 1,
+			"CHA": 1
+		},
+		"Tiefling": {
+			"INT": 1,
+			"CHA": 2
+		}
+		}
+}
