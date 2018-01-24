@@ -12,34 +12,28 @@ def statsroller():
 statslist = []
 for x in range(6):
     stats = ["STR","DEX","CON","INT","WIS","CHA"]
-    number = statsroller()
-    statslist.append([stats[x], number])
+    n = statsroller()
+    statslist.append([stats[x], n])
 
-file = 'rollstuff.json'
+file = 'rollstuff2.json'
 
-#def rolljson(thing,min,max):
-#    with codecs.open(file, 'r', 'utf-8-sig') as data_file:
-#        data = json.load(data_file)
-#        n = roll(min,max)
-#        return data[str(thing)][str(n)]
-
-def rolljson(thing):
-    thing = str(thing)
+def rolljson(t):
     with codecs.open(file, 'r', 'utf-8-sig') as data_file:
         data = json.load(data_file)
-        if thing == "races":
+        if t == "races":
             rpicks = []
-            for x in data[thing]:
-                rpicks.append(data[thing][x])
-                n = roll(1,14)
+            for x in data["races"]:
+                rpicks.append(data["races"][0][x])
+            n = roll(1,14)
             pick = rpicks[n]
             return(pick)
-        if thing == "classes":
+        if t == "classes":
             n = roll(1,11)
-            return data(str["classes"][str(n)]
+            n = str(n)
+            return data[t][n]
 
-classresult = rolljson(classes)
-raceresult = rolljson(races)
+raceresult = rolljson("races")
+classresult = rolljson("classes")
 
 print("You are a " + str(raceresult) + " " + str(classresult) + "!" + " " + "Your stats are:\n")
 print(statslist)
