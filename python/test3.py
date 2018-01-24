@@ -1,6 +1,6 @@
 import codecs,random,json
 
-file="rollstuff.json"
+file="rollstuff2.json"
 
 def roll(min, max):
     return random.randint(min,max)
@@ -10,7 +10,7 @@ def rollrace():
         data = json.load(data_file)
         rpicks = []
         for x in data["races"]:
-            rpicks.append(data["races"][x])
+            rpicks.append(data["races"][x]["Name"])
         n = roll(1,14)
         pick = rpicks[n]
         return(pick)
