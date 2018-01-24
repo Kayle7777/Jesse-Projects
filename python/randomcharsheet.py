@@ -17,20 +17,29 @@ for x in range(6):
 
 file = 'rollstuff.json'
 
-def rolljson(thing,min,max):
+#def rolljson(thing,min,max):
+#    with codecs.open(file, 'r', 'utf-8-sig') as data_file:
+#        data = json.load(data_file)
+#        n = roll(min,max)
+#        return data[str(thing)][str(n)]
+
+def rolljson(thing):
+    thing = str(thing)
     with codecs.open(file, 'r', 'utf-8-sig') as data_file:
         data = json.load(data_file)
-        n = roll(min,max)
-        return data[str(thing)][str(n)]
+        if thing == "races":
+            rpicks = []
+            for x in data[thing]:
+                rpicks.append(data[thing][x])
+                n = roll(1,14)
+            pick = rpicks[n]
+            return(pick)
+        if thing == "classes":
+            n = roll(1,11)
+            return data(str["classes"][str(n)]
 
-classresult = rolljson("classes",1,11)
-raceresult = rolljson("races",1,14)
-
-print(statslist[0])
-if str(classresult) == "Mountain Dwarf" or str(classresult) == "Half-Orc" or str(classresult) == "Dragonborn":
-    statslist[0][1] = statslist[0][1] + 2
-elif str(classresult) == "Human":
-    statslist[0][1] = statslist[0][1] + 1
+classresult = rolljson(classes)
+raceresult = rolljson(races)
 
 print("You are a " + str(raceresult) + " " + str(classresult) + "!" + " " + "Your stats are:\n")
 print(statslist)
