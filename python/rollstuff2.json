@@ -15,54 +15,67 @@
 
 	"races": {
 		"Dragonborn":  {
+			"Name": "Dragonborn",
 			"STR": 2,
 			"CHA": 1
 		},
 
 		"Hill Dwarf": {
+			"Name": "Hill Dwarf",
 			"CON": 2,
 			"WIS": 1
 		},
 		"Mountain Dwarf": {
+			"Name": "Mountain Dwarf",
 			"STR": 2,
 			"CON": 2
 		},
 		"Drow": {
+			"Name": "Drow",
 			"DEX": 2,
 			"CHA": 1
 		},
 		"High Elf": {
+			"Name": "High Elf",
 			"DEX": 2,
 			"INT": 1
 		},
 		"Wood Elf": {
+			"Name": "Wood Elf",
 			"DEX": 2,
 			"WIS": 1
 		},
 		"Forest Gnome": {
+			"Name": "Forest Gnome",
 			"DEX": 1,
 			"INT": 2
 		},
 		"Rock Gnome": {
+			"Name": "Rock Gnome",
 			"CON": 1,
 			"INT": 2
 		},
 		"Half-Elf": {
+			"Name": "Half-Elf",
 			"CHA": 2
 		},
 		"Half-Orc": {
+			"Name": "Half-Orc",
 			"STR": 2,
 			"CON": 1
 		},
-		"Lightfood Halfling": {
+		"Lightfoot Halfling": {
+			"Name": "Lightfoot Halfling",
 			"DEX": 2,
 			"CHA": 1
 		},
 		"Stout Halfling": {
+			"Name": "Stout Halfling",
 			"DEX": 2,
 			"CON": 1
 		},
 		"Human": {
+			"Name": "Human",
 			"STR": 1,
 			"DEX": 1,
 			"CON": 1,
@@ -71,6 +84,7 @@
 			"CHA": 1
 		},
 		"Tiefling": {
+			"Name": "Tiefling",
 			"INT": 1,
 			"CHA": 2
 		}
