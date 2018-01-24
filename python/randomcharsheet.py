@@ -24,7 +24,7 @@ def rolljson(t):
             rpicks = []
             for x in data["races"]:
                 rpicks.append(data["races"][x]["Name"])
-            n = roll(1,14)
+            n = roll(0,13)
             pick = rpicks[n]
             return(pick)
         if t == "classes":
