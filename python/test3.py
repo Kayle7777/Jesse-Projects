@@ -16,13 +16,11 @@ def rolljson(t):
             pick = rpicks[n]
             def racialstats():
                 d = data["races"][pick]
-                y = []
                 b = list(d.keys())
                 c = list(d.values())
                 del b[0]
                 del c[0]
-                for x in range(2):
-                    y.extend([b[x],c[x]])
+                y = [list(l) for l in zip(b, c)]
                 pstats = print(y)
                 return pstats
             pstats = racialstats()
