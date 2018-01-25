@@ -24,7 +24,7 @@ def rolljson(t):
                 pstats = print(y)
                 return pstats
             pstats = racialstats()
-            p = [pick,pstats]
+            p = pick
             return(p)
         if t == "classes":
             n = roll(1,11)
