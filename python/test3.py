@@ -18,8 +18,6 @@ def rolljson(t):
                 d = data["races"][pick]
                 b = list(d.keys())
                 c = list(d.values())
-                del b[0]
-                del c[0]
                 y = [list(l) for l in zip(b, c)]
                 pstats = print(y)
                 return pstats

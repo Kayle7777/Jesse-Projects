@@ -57,7 +57,8 @@
 		},
 		"Half-Elf": {
 			"Name": "Half-Elf",
-			"CHA": 2
+			"CHA": 2,
+			"CON": 1
 		},
 		"Half-Orc": {
 			"Name": "Half-Orc",
