@@ -26,7 +26,15 @@ def rolljson(t):
                 rpicks.append(data["races"][x]["Name"])
             n = roll(0,13)
             pick = rpicks[n]
-            return(pick)
+            def racialstats():
+                d = data["races"][pick]
+                b = list(d.keys()); b.remove('Name')
+                c = list(d.values()); c.remove(pick)
+                y = [list(l) for l in zip(b, c)]
+                return y
+            pstats = racialstats()
+            p = pick
+            return(p)
         if t == "classes":
             n = roll(1,11)
             n = str(n)
