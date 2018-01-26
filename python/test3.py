@@ -16,8 +16,8 @@ def rolljson(t):
             pick = rpicks[n]
             def racialstats():
                 d = data["races"][pick]
-                b = list(d.keys())
-                c = list(d.values())
+                b = list(d.keys()); b.remove('Name')
+                c = list(d.values()); c.remove(pick)
                 y = [list(l) for l in zip(b, c)]
                 pstats = print(y)
                 return pstats
