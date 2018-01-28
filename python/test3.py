@@ -34,6 +34,6 @@ def rolljson(t):
             n = roll(1,11)
             n = str(n)
             return data[t][n]
-print(statslist)
 print(rolljson("races"))
 print(rolljson("classes"))
+print(statslist)
