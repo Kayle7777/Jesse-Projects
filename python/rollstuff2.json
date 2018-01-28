@@ -17,63 +17,111 @@
 		"Dragonborn":  {
 			"Name": "Dragonborn",
 			"STR": 2,
-			"CHA": 1
+			"CHA": 1,
+			"WIS": 0,
+			"CON": 0,
+			"DEX": 0,
+			"INT": 0
 		},
 
 		"Hill Dwarf": {
 			"Name": "Hill Dwarf",
 			"CON": 2,
-			"WIS": 1
+			"WIS": 1,
+			"INT": 0,
+			"CHA": 0,
+			"STR": 0,
+			"DEX": 0
 		},
 		"Mountain Dwarf": {
 			"Name": "Mountain Dwarf",
 			"STR": 2,
-			"CON": 2
+			"CON": 2,
+			"DEX": 0,
+			"INT": 0,
+			"CHA": 0,
+			"WIS": 0
 		},
 		"Drow": {
 			"Name": "Drow",
 			"DEX": 2,
-			"CHA": 1
+			"CHA": 1,
+			"WIS": 0,
+			"INT": 0,
+			"STR": 0,
+			"CON": 0
 		},
 		"High Elf": {
 			"Name": "High Elf",
 			"DEX": 2,
-			"INT": 1
+			"INT": 1,
+			"STR": 0,
+			"WIS": 0,
+			"CHA": 0,
+			"CON": 0
 		},
 		"Wood Elf": {
 			"Name": "Wood Elf",
 			"DEX": 2,
-			"WIS": 1
+			"WIS": 1,
+			"CON": 0,
+			"STR": 0,
+			"INT": 0,
+			"CHA": 0
 		},
 		"Forest Gnome": {
 			"Name": "Forest Gnome",
 			"DEX": 1,
-			"INT": 2
+			"INT": 2,
+			"CHA": 0,
+			"STR": 0,
+			"CON": 0,
+			"WIS": 0
 		},
 		"Rock Gnome": {
 			"Name": "Rock Gnome",
 			"CON": 1,
-			"INT": 2
+			"INT": 2,
+			"STR": 0,
+			"DEX": 0,
+			"WIS": 0,
+			"CHA": 0
 		},
 		"Half-Elf": {
 			"Name": "Half-Elf",
 			"CHA": 2,
-			"CON": 1
+			"CON": 1,
+			"INT": 0,
+			"WIS": 0,
+			"STR": 0,
+			"DEX": 0
 		},
 		"Half-Orc": {
 			"Name": "Half-Orc",
 			"STR": 2,
-			"CON": 1
+			"CON": 1,
+			"DEX": 0,
+			"WIS": 0,
+			"INT": 0,
+			"CHA": 0
 		},
 		"Lightfoot Halfling": {
 			"Name": "Lightfoot Halfling",
 			"DEX": 2,
-			"CHA": 1
+			"CHA": 1,
+			"INT": 0,
+			"WIS": 0,
+			"CON": 0,
+			"STR": 0
 		},
 		"Stout Halfling": {
 			"Name": "Stout Halfling",
 			"DEX": 2,
-			"CON": 1
+			"CON": 1,
+			"INT": 0,
+			"CHA": 0,
+			"WIS": 0,
+			"STR": 0
 		},
 		"Human": {
 			"Name": "Human",
@@ -87,7 +135,11 @@
 		"Tiefling": {
 			"Name": "Tiefling",
 			"INT": 1,
-			"CHA": 2
+			"CHA": 2,
+			"CON": 0,
+			"WIS": 0,
+			"DEX": 0,
+			"STR": 0
 		}
 		}
 }
