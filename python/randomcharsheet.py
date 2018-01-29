@@ -44,6 +44,6 @@ def rolljson(t):
 raceresult = rolljson("races") # This returns a list ['Name of race', {Statslists with racial bonuses}, [racial bonuses]]
 classresult = rolljson("classes")
 print("Your original rolled stats were:" + "\n\n" + str(statslist) + "\n")
-print("You are a " + str(raceresult[0]) + " " + str(classresult) + " " + "which gives bonus stats: " + str(raceresult[2]) + "\n" "Your stats with racial bonuses are:\n")
+print("You are a " + str(raceresult[0]) + " " + str(classresult) + " " + "which gives bonus racial stats: " + str(raceresult[2]) + "\n" "Your stats with racial bonuses are:\n")
 print(str(raceresult[1]))
 ''
