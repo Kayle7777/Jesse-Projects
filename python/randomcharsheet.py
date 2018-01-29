@@ -44,10 +44,10 @@ def rolljson(t):
 raceresult = rolljson("races") # This returns a list ['Name of race', [racial bonuses], {Statslists with racial bonuses}]
 classresult = rolljson("classes")
 print("Your original rolled stats were:" + " " + str(dict(statslist)) + "\n")
-print("You are a " + str(raceresult[0]) + " " + str(classresult) + " " + "which gives bonus racial stats: " + str(raceresult[1]) + "\n\n" "Your stats list with racial bonuses added is: " + str(raceresult[2]))
+print("You are a " + str(raceresult[0]) + " " + str(classresult) + " " + "which gives bonus racial stats: " + str(dict(raceresult[1])) + "\n\n" "Your stats list with racial bonuses added is: " + str(raceresult[2]))
 # EXAMPLE OUTPUT
-#Your original rolled stats were: [['STR', 14], ['DEX', 10], ['CON', 16], ['INT', 8], ['WIS', 8], ['CHA', 11]]
+#Your original rolled stats were: {'STR': 16, 'DEX': 14, 'CON': 11, 'INT': 12, 'WIS': 10, 'CHA': 7}
 
-#You are a Tiefling Barbarian which gives bonus racial stats: [['INT', 1], ['CHA', 2]]
+#You are a Stout Halfling Cleric which gives bonus racial stats: {'DEX': 2, 'CON': 1}
 
-#Your stats list with racial bonuses added is: {'STR': 14, 'DEX': 10, 'CON': 16, 'INT': 9, 'WIS': 8, 'CHA': 13}
+#Your stats list with racial bonuses added is: {'STR': 16, 'DEX': 16, 'CON': 12, 'INT': 12, 'WIS': 10, 'CHA': 7}
