@@ -1,5 +1,6 @@
 import random, json, codecs
 from collections import defaultdict
+from itertools import chain
 
 def roll(min, max):
     return random.randint(min,max)
@@ -27,22 +28,21 @@ def rolljson(t):
                 rpicks.append(data["races"][x]["Name"])
             n = roll(0,13)
             pick = rpicks[n]
-            def racialstats():
-                d = data["races"][pick]
-                b = list(d.keys()); b.remove('Name')
-                c = list(d.values()); c.remove(pick)
-                y = [list(l) for l in zip(b, c)]
-                return y
-            pstats = racialstats()
-            p = pick
-            return(p)
+            d = data["races"][pick]; b = list(d.keys()); b.remove('Name'); c = list(d.values()); c.remove(pick)
+            y = [list(l) for l in zip(b, c)]
+            d = [dict(statslist),dict(y)]
+            defaultd = defaultdict(list)
+            for k,v in chain(d[0].items(),d[1].items()):
+                defaultd[k].append(v)
+            defaultd = dict(defaultd);statslist2 = dict([(key, sum(values)) for key, values in defaultd.items()])
+            return [pick, statslist2]
         if t == "classes":
             n = roll(1,11)
             n = str(n)
             return data[t][n]
 
-raceresult = rolljson("races")
+raceresult = rolljson("races")[0]
 classresult = rolljson("classes")
-
-print("You are a " + str(raceresult) + " " + str(classresult) + "!" + " " + "Your stats are:\n")
-print(statslist)
+print("Your original rolled stats were:" + "\n\n" + str(statslist) + "\n")
+print("You are a " + str(raceresult) + " " + str(classresult) + "." + "\n" + "Your stats with racial bonuses are:\n")
+print(rolljson("races")[1])
