@@ -48,9 +48,7 @@ print("You are a " + str(raceresult[0]) + " " + str(classresult) + " " + "which 
 print(str(raceresult[1]))
 
 # EXAMPLE OUTPUT
-#Your original rolled stats were:
-
-#[['STR', 14], ['DEX', 13], ['CON', 14], ['INT', 16], ['WIS', 16], ['CHA', 15]]
+#Your original rolled stats were: [['STR', 14], ['DEX', 13], ['CON', 14], ['INT', 16], ['WIS', 16], ['CHA', 15]]
 
 #You are a Human Sorcerer which gives bonus racial stats: [['STR', 1], ['DEX', 1], ['CON', 1], ['INT', 1], ['WIS', 1], ['CHA', 1]]
 #Your stats with racial bonuses are:
