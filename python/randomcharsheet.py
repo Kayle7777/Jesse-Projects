@@ -46,4 +46,13 @@ classresult = rolljson("classes")
 print("Your original rolled stats were:" + "\n\n" + str(statslist) + "\n")
 print("You are a " + str(raceresult[0]) + " " + str(classresult) + " " + "which gives bonus racial stats: " + str(raceresult[2]) + "\n" "Your stats with racial bonuses are:\n")
 print(str(raceresult[1]))
-''
+
+# EXAMPLE OUTPUT
+#Your original rolled stats were:
+
+#[['STR', 14], ['DEX', 13], ['CON', 14], ['INT', 16], ['WIS', 16], ['CHA', 15]]
+#
+#You are a Human Sorcerer which gives bonus racial stats: [['STR', 1], ['DEX', 1], ['CON', 1], ['INT', 1], ['WIS', 1], ['CHA', 1]]
+#Your stats with racial bonuses are:
+#
+#{'STR': 15, 'DEX': 14, 'CON': 15, 'INT': 17, 'WIS': 17, 'CHA': 16}
