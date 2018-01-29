@@ -1,4 +1,5 @@
 import random, json, codecs
+from collections import defaultdict
 
 def roll(min, max):
     return random.randint(min,max)

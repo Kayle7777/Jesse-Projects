@@ -1,4 +1,5 @@
 import codecs,random,json
+from collections import defaultdict
 
 file = 'rollstuff2.json'
 
@@ -20,9 +21,9 @@ def rolljson(t):
             d = data["races"][pick]; b = list(d.keys()); b.remove('Name'); c = list(d.values()); c.remove(pick)
             y = [list(l) for l in zip(b, c)]
             print(y)
-            for x in range(6):
-                statslist[x][1] + y[x][1]
-            return(pick)
+            d = dict(statslist),dict(y)
+            print(d)
+            return pick
         if t == "classes":
             n = roll(1,11)
             n = str(n)
