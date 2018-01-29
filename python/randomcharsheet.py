@@ -41,8 +41,8 @@ def rolljson(t):
             n = str(n)
             return data[t][n]
 
-raceresult = rolljson("races")[0]
+raceresult = rolljson("races")
 classresult = rolljson("classes")
 print("Your original rolled stats were:" + "\n\n" + str(statslist) + "\n")
-print("You are a " + str(raceresult) + " " + str(classresult) + "." + "\n" + "Your stats with racial bonuses are:\n")
-print(rolljson("races")[1])
+print("You are a " + str(raceresult[0]) + " " + str(classresult) + "." + "\n" + "Your stats with racial bonuses are:\n")
+print(str(raceresult[1]))
