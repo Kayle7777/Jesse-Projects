@@ -17,18 +17,15 @@ for x in range(6):
     n = statsroller()
     statslist.append([stats[x], n])
 
-file = 'rollstuff2.json'
+file = 'rollstufftest.json'
 
 def rolljson(t):
     with codecs.open(file, 'r', 'utf-8-sig') as data_file:
         data = json.load(data_file)
         if t == "races":
-            rpicks = []
-            for x in data["races"]:
-                rpicks.append(data["races"][x]["Name"])
-            n = roll(0,len(rpicks)-1)
-            pick = rpicks[n]
-            d = data["races"][pick]; b = list(d.keys()); b.remove('Name'); c = list(d.values()); c.remove(pick)
+            rpicks = list(data[t])
+            n = roll(0,len(rpicks)-1);pick = rpicks[n]
+            d = data["races"][pick]; b = list(d.keys()); c = list(d.values())
             y = [list(l) for l in zip(b, c)]
             d = [dict(statslist),dict(y)]
             defaultd = defaultdict(list)

@@ -1,107 +1,94 @@
 {
 	"classes": {
 		"Artificer": {
-		"Name": "Artificer"
+			"Proficiencies": ["Test1", "Test2", "Test3", "Test4"]
 		},
 		"Barbarian": {
-		"Name" : "Barbarian"
+			"Proficiencies": ["Test1", "Test2", "Test3", "Test4"]
 	},
 		"Bard": {
-		"Name" : "Bard"
+			"Proficiencies": ["Test1", "Test2", "Test3", "Test4"]
 	},
 		"Cleric": {
-		"Name" : "Cleric"
+			"Proficiencies": ["Test1", "Test2", "Test3", "Test4"]
 	},
 		"Druid": {
-		"Name" : "Druid"
+			"Proficiencies": ["Test1", "Test2", "Test3", "Test4"]
 	},
 		"Fighter": {
-		"Name" : "Fighter"
+			"Proficiencies": ["Test1", "Test2", "Test3", "Test4"]
 	},
 		"Monk": {
-		"Name" : "Monk"
+			"Proficiencies": ["Test1", "Test2", "Test3", "Test4"]
 	},
 		"Paladin": {
-		"Name" : "Paladin"
+			"Proficiencies": ["Test1", "Test2", "Test3", "Test4"]
 	},
 		"Ranger": {
-		"Name" : "Ranger"
+			"Proficiencies": ["Test1", "Test2", "Test3", "Test4"]
 	},
 		"Rogue": {
-		"Name" : "Rogue"
+			"Proficiencies": ["Test1", "Test2", "Test3", "Test4"]
 	},
 		"Sorcerer": {
-		"Name" : "Sorcerer"
+			"Proficiencies": ["Test1", "Test2", "Test3", "Test4"]
 	},
 		"Warlock": {
-		"Name" : "Warlock"
+			"Proficiencies": ["Test1", "Test2", "Test3", "Test4"]
 	}
 	},
 
 	"races": {
 		"Dragonborn":  {
-			"Name": "Dragonborn",
 			"STR": 2,
 			"CHA": 1
 		},
 
 		"Hill Dwarf": {
-			"Name": "Hill Dwarf",
 			"CON": 2,
 			"WIS": 1
 		},
 		"Mountain Dwarf": {
-			"Name": "Mountain Dwarf",
 			"STR": 2,
 			"CON": 2
 		},
 		"Drow": {
-			"Name": "Drow",
 			"DEX": 2,
 			"CHA": 1
 		},
 		"High Elf": {
-			"Name": "High Elf",
 			"DEX": 2,
 			"INT": 1
 		},
 		"Wood Elf": {
-			"Name": "Wood Elf",
 			"DEX": 2,
 			"WIS": 1
 		},
 		"Forest Gnome": {
-			"Name": "Forest Gnome",
 			"DEX": 1,
 			"INT": 2
 		},
 		"Rock Gnome": {
-			"Name": "Rock Gnome",
 			"CON": 1,
 			"INT": 2
 		},
 		"Half-Elf": {
-			"Name": "Half-Elf",
 			"CHA": 2,
 			"CON": 1
 		},
 		"Half-Orc": {
-			"Name": "Half-Orc",
 			"STR": 2,
 			"CON": 1
 		},
 		"Lightfoot Halfling": {
-			"Name": "Lightfoot Halfling",
 			"DEX": 2,
 			"CHA": 1
 		},
 		"Stout Halfling": {
-			"Name": "Stout Halfling",
 			"DEX": 2,
 			"CON": 1
 		},
 		"Human": {
-			"Name": "Human",
 			"STR": 1,
 			"DEX": 1,
 			"CON": 1,
@@ -110,52 +97,42 @@
 			"CHA": 1
 		},
 		"Tiefling": {
-			"Name": "Tiefling",
 			"INT": 1,
 			"CHA": 2
 		},
 		"Fallen Aasimar": {
-			"Name": "Fallen Aasimar",
 			"STR": 1,
 			"CHA": 2
 		},
 		"Protector Aasimar": {
-			"Name": "Protector Aasimar",
 			"WIS": 1,
 			"CHA": 2
 		},
 		"Scourge Aasimar": {
-			"Name": "Scourge Aasimar",
 			"CON": 1,
 			"CHA": 2
 		},
 		"Firbolg": {
-			"Name": "Firbolg",
 			"STR": 1,
 			"WIS": 2
 		},
 		"Kenku": {
-			"Name": "Kenku",
 			"DEX": 2,
 			"WIS": 1
 		},
 		"Kobold": {
-			"Name": "Kobold",
 			"STR": -2,
 			"DEX": 2
 		},
 		"Lizardfolk": {
-			"Name": "Lizardfolk",
 			"CON": 2,
 			"WIS": 1
 		},
 		"Tabaxi": {
-			"Name": "Tabaxi",
 			"DEX": 2,
 			"CHA": 1
 		},
 		"Triton": {
-			"Name": "Triton",
 			"STR": 1,
 			"CON": 1,
 			"CHA": 1
