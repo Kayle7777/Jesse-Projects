@@ -1,31 +1,115 @@
 {
 	"classes": {
-		"1" : "Barbarian",
-		"2" : "Bard",
-		"3" : "Cleric",
-		"4" : "Druid",
-		"5" : "Fighter",
-		"6" : "Monk",
-		"7" : "Paladin",
-		"8" : "Ranger",
-		"9" : "Rogue",
-		"10" : "Sorcerer",
-		"11" : "Warlock"
+		"Barbarian": {
+		"Name" : "Barbarian"
 	},
+		"Bard": {
+		"Name" : "Bard"
+	},
+		"Cleric": {
+		"Name" : "Cleric"
+	},
+		"Druid": {
+		"Name" : "Druid"
+	},
+		"Fighter": {
+		"Name" : "Fighter"
+	},
+		"Monk": {
+		"Name" : "Monk"
+	},
+		"Paladin": {
+		"Name" : "Paladin"
+	},
+		"Ranger": {
+		"Name" : "Ranger"
+	},
+		"Rogue": {
+		"Name" : "Rogue"
+	},
+		"Sorcerer": {
+		"Name" : "Sorcerer"
+	},
+		"Warlock": {
+		"Name" : "Warlock"
+	}
+	},
+
 	"races": {
-		"1" : "Dragonborn",
-		"2" : "Hill Dwarf",
-		"3" : "Mountain Dwarf",
-		"4" : "Drow",
-		"5" : "High Elf",
-		"6" : "Wood Elf",
-		"7" : "Forest Gnome",
-		"8" : "Rock Gnome",
-		"9" : "Half-Elf",
-		"10" : "Half-Orc",
-		"11" : "Lightfood Halfling",
-		"12" : "Stout Halfling",
-		"13" : "Human",
-		"14" : "Tiefling"
+		"Dragonborn":  {
+			"Name": "Dragonborn",
+			"STR": 2,
+			"CHA": 1
+		},
+
+		"Hill Dwarf": {
+			"Name": "Hill Dwarf",
+			"CON": 2,
+			"WIS": 1
+		},
+		"Mountain Dwarf": {
+			"Name": "Mountain Dwarf",
+			"STR": 2,
+			"CON": 2
+		},
+		"Drow": {
+			"Name": "Drow",
+			"DEX": 2,
+			"CHA": 1
+		},
+		"High Elf": {
+			"Name": "High Elf",
+			"DEX": 2,
+			"INT": 1
+		},
+		"Wood Elf": {
+			"Name": "Wood Elf",
+			"DEX": 2,
+			"WIS": 1
+		},
+		"Forest Gnome": {
+			"Name": "Forest Gnome",
+			"DEX": 1,
+			"INT": 2
+		},
+		"Rock Gnome": {
+			"Name": "Rock Gnome",
+			"CON": 1,
+			"INT": 2
+		},
+		"Half-Elf": {
+			"Name": "Half-Elf",
+			"CHA": 2,
+			"CON": 1
+		},
+		"Half-Orc": {
+			"Name": "Half-Orc",
+			"STR": 2,
+			"CON": 1
+		},
+		"Lightfoot Halfling": {
+			"Name": "Lightfoot Halfling",
+			"DEX": 2,
+			"CHA": 1
+		},
+		"Stout Halfling": {
+			"Name": "Stout Halfling",
+			"DEX": 2,
+			"CON": 1
+		},
+		"Human": {
+			"Name": "Human",
+			"STR": 1,
+			"DEX": 1,
+			"CON": 1,
+			"INT": 1,
+			"WIS": 1,
+			"CHA": 1
+		},
+		"Tiefling": {
+			"Name": "Tiefling",
+			"INT": 1,
+			"CHA": 2
+		}
 		}
 }

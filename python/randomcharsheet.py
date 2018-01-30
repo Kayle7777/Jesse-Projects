@@ -17,7 +17,7 @@ for x in range(6):
     n = statsroller()
     statslist.append([stats[x], n])
 
-file = 'rollstuff2.json'
+file = 'rollstuff.json'
 
 def rolljson(t):
     with codecs.open(file, 'r', 'utf-8-sig') as data_file:
@@ -37,9 +37,9 @@ def rolljson(t):
             defaultd = dict(defaultd);statslist2 = dict([(key, sum(values)) for key, values in defaultd.items()])
             return [pick, y, statslist2]
         if t == "classes":
-            n = roll(1,11)
-            n = str(n)
-            return data[t][n]
+            n = roll(0,10)
+            a = list(data[t])
+            return a[n]
 
 raceresult = rolljson("races") # This returns a list ['Name of race', [racial bonuses], {Statslists with racial bonuses}]
 classresult = rolljson("classes")
