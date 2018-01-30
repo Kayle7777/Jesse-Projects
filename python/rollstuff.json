@@ -113,6 +113,52 @@
 			"Name": "Tiefling",
 			"INT": 1,
 			"CHA": 2
+		},
+		"Fallen Aasimar": {
+			"Name": "Fallen Aasimar",
+			"STR": 1,
+			"CHA": 2
+		},
+		"Protector Aasimar": {
+			"Name": "Protector Aasimar",
+			"WIS": 1,
+			"CHA": 2
+		},
+		"Scourge Aasimar": {
+			"Name": "Scourge Aasimar",
+			"CON": 1,
+			"CHA": 2
+		},
+		"Firbolg": {
+			"Name": "Firbolg",
+			"STR": 1,
+			"WIS": 2
+		},
+		"Kenku": {
+			"Name": "Kenku",
+			"DEX": 2,
+			"WIS": 1
+		},
+		"Kobold": {
+			"Name": "Kobold",
+			"STR": -2,
+			"DEX": 2
+		},
+		"Lizardfolk": {
+			"Name": "Lizardfolk",
+			"CON": 2,
+			"WIS": 1
+		},
+		"Tabaxi": {
+			"Name": "Tabaxi",
+			"DEX": 2,
+			"CHA": 1
+		},
+		"Triton": {
+			"Name": "Triton",
+			"STR": 1,
+			"CON": 1,
+			"CHA": 1
 		}
 		}
 }

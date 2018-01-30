@@ -1,16 +1,41 @@
 {
 	"classes": {
-		"1" : "Barbarian",
-		"2" : "Bard",
-		"3" : "Cleric",
-		"4" : "Druid",
-		"5" : "Fighter",
-		"6" : "Monk",
-		"7" : "Paladin",
-		"8" : "Ranger",
-		"9" : "Rogue",
-		"10" : "Sorcerer",
-		"11" : "Warlock"
+		"Artificer": {
+		"Name": "Artificer"
+		},
+		"Barbarian": {
+		"Name" : "Barbarian"
+	},
+		"Bard": {
+		"Name" : "Bard"
+	},
+		"Cleric": {
+		"Name" : "Cleric"
+	},
+		"Druid": {
+		"Name" : "Druid"
+	},
+		"Fighter": {
+		"Name" : "Fighter"
+	},
+		"Monk": {
+		"Name" : "Monk"
+	},
+		"Paladin": {
+		"Name" : "Paladin"
+	},
+		"Ranger": {
+		"Name" : "Ranger"
+	},
+		"Rogue": {
+		"Name" : "Rogue"
+	},
+		"Sorcerer": {
+		"Name" : "Sorcerer"
+	},
+		"Warlock": {
+		"Name" : "Warlock"
+	}
 	},
 
 	"races": {
@@ -88,6 +113,52 @@
 			"Name": "Tiefling",
 			"INT": 1,
 			"CHA": 2
+		},
+		"Fallen Aasimar": {
+			"Name": "Fallen Aasimar",
+			"STR": 1,
+			"CHA": 2
+		},
+		"Protector Aasimar": {
+			"Name": "Protector Aasimar",
+			"WIS": 1,
+			"CHA": 2
+		},
+		"Scourge Aasimar": {
+			"Name": "Scourge Aasimar",
+			"CON": 1,
+			"CHA": 2
+		},
+		"Firbolg": {
+			"Name": "Firbolg",
+			"STR": 1,
+			"WIS": 2
+		},
+		"Kenku": {
+			"Name": "Kenku",
+			"DEX": 2,
+			"WIS": 1
+		},
+		"Kobold": {
+			"Name": "Kobold",
+			"STR": -2,
+			"DEX": 2
+		},
+		"Lizardfolk": {
+			"Name": "Lizardfolk",
+			"CON": 2,
+			"WIS": 1
+		},
+		"Tabaxi": {
+			"Name": "Tabaxi",
+			"DEX": 2,
+			"CHA": 1
+		},
+		"Triton": {
+			"Name": "Triton",
+			"STR": 1,
+			"CON": 1,
+			"CHA": 1
 		}
 		}
 }
