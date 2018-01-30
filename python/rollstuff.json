@@ -1,5 +1,8 @@
 {
 	"classes": {
+		"Artificer": {
+			"Name": "Artificer"
+		},
 		"Barbarian": {
 		"Name" : "Barbarian"
 	},

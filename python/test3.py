@@ -26,7 +26,7 @@ def rolljson(t):
             rpicks = []
             for x in data["races"]:
                 rpicks.append(data["races"][x]["Name"])
-            n = roll(0,13)
+            n = roll(0,len(rpicks)-1)
             pick = rpicks[n]
             d = data["races"][pick]; b = list(d.keys()); b.remove('Name'); c = list(d.values()); c.remove(pick)
             y = [list(l) for l in zip(b, c)]
@@ -37,8 +37,8 @@ def rolljson(t):
             defaultd = dict(defaultd);statslist2 = dict([(key, sum(values)) for key, values in defaultd.items()])
             return [pick, y, statslist2]
         if t == "classes":
-            n = roll(0,10)
             a = list(data[t])
+            n = roll(0,len(a)-1)
             return a[n]
 
 raceresult = rolljson("races") # This returns a list ['Name of race', [racial bonuses], {Statslists with racial bonuses}]
