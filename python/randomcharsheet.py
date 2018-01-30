@@ -25,7 +25,7 @@ def rolljson(t):
         if t == "races":
             a = list(data[t])
             n = roll(0,len(a)-1)
-            d = data["races"][a[n]]; b = list(d.keys()); c = list(d.values())
+            d = data[t][a[n]]; b = list(d.keys()); c = list(d.values())
             y = [list(l) for l in zip(b, c)]
             d = [dict(statslist),dict(y)]
             defaultd = defaultdict(list)
