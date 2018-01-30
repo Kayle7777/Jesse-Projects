@@ -23,24 +23,25 @@ def rolljson(t):
     with codecs.open(file, 'r', 'utf-8-sig') as data_file:
         data = json.load(data_file)
         if t == "races":
-            rpicks = list(data[t])
-            n = roll(0,len(rpicks)-1);pick = rpicks[n]
-            d = data["races"][pick]; b = list(d.keys()); c = list(d.values())
+            a = list(data[t])
+            n = roll(0,len(a)-1)
+            d = data["races"][a[n]]; b = list(d.keys()); c = list(d.values())
             y = [list(l) for l in zip(b, c)]
             d = [dict(statslist),dict(y)]
             defaultd = defaultdict(list)
             for k,v in chain(d[0].items(),d[1].items()):
                 defaultd[k].append(v)
             defaultd = dict(defaultd);statslist2 = dict([(key, sum(values)) for key, values in defaultd.items()])
-            return [pick, y, statslist2]
+            return [a[n], y, statslist2]
         if t == "classes":
             a = list(data[t])
             n = roll(0,len(a)-1)
-            return a[n]
+            proflist = data[t][a[n]]["Proficiencies"]
+            return [a[n], proflist]
 
 raceresult = rolljson("races") # This returns a list ['Name of race', [racial bonuses], {Statslists with racial bonuses}]
-classresult = rolljson("classes")
-print("You are a " + str(raceresult[0]) + " " + str(classresult) + " " + "which gives bonus racial stats: " + str(dict(raceresult[1])) + "\n\n" + "Your stat list with racial bonuses added is: " + str(raceresult[2]))
+classresult = rolljson("classes") # This returns a list [Name of class, [proficiencies of class]]
+print("You are a " + str(raceresult[0]) + " " + str(classresult[0]) + " " + "which gives bonus racial stats: " + str(dict(raceresult[1])) + "\n\n" + "Your starting proficiencies from being a " + str(classresult[0]) + " are: " + str(classresult[1]) + "\n\n" + "Your stat list with racial bonuses added is: " + str(raceresult[2]))
 # EXAMPLE OUTPUT
 #You are a Stout Halfling Cleric which gives bonus racial stats: {'DEX': 2, 'CON': 1}
 

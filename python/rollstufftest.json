@@ -1,40 +1,40 @@
 {
 	"classes": {
 		"Artificer": {
-			"Proficiencies": ["Test1", "Test2", "Test3", "Test4"]
+			"Proficiencies": ["ATest1", "Test2", "Test3", "Test4"]
 		},
 		"Barbarian": {
-			"Proficiencies": ["Test1", "Test2", "Test3", "Test4"]
+			"Proficiencies": ["BTest1", "Test2", "Test3", "Test4"]
 	},
 		"Bard": {
-			"Proficiencies": ["Test1", "Test2", "Test3", "Test4"]
+			"Proficiencies": ["BTest1", "Test2", "Test3", "Test4"]
 	},
 		"Cleric": {
-			"Proficiencies": ["Test1", "Test2", "Test3", "Test4"]
+			"Proficiencies": ["CTest1", "Test2", "Test3", "Test4"]
 	},
 		"Druid": {
-			"Proficiencies": ["Test1", "Test2", "Test3", "Test4"]
+			"Proficiencies": ["DTest1", "Test2", "Test3", "Test4"]
 	},
 		"Fighter": {
-			"Proficiencies": ["Test1", "Test2", "Test3", "Test4"]
+			"Proficiencies": ["FTest1", "Test2", "Test3", "Test4"]
 	},
 		"Monk": {
-			"Proficiencies": ["Test1", "Test2", "Test3", "Test4"]
+			"Proficiencies": ["MTest1", "Test2", "Test3", "Test4"]
 	},
 		"Paladin": {
-			"Proficiencies": ["Test1", "Test2", "Test3", "Test4"]
+			"Proficiencies": ["PTest1", "Test2", "Test3", "Test4"]
 	},
 		"Ranger": {
-			"Proficiencies": ["Test1", "Test2", "Test3", "Test4"]
+			"Proficiencies": ["RTest1", "Test2", "Test3", "Test4"]
 	},
 		"Rogue": {
-			"Proficiencies": ["Test1", "Test2", "Test3", "Test4"]
+			"Proficiencies": ["RTest1", "Test2", "Test3", "Test4"]
 	},
 		"Sorcerer": {
-			"Proficiencies": ["Test1", "Test2", "Test3", "Test4"]
+			"Proficiencies": ["STest1", "Test2", "Test3", "Test4"]
 	},
 		"Warlock": {
-			"Proficiencies": ["Test1", "Test2", "Test3", "Test4"]
+			"Proficiencies": ["WTest1", "Test2", "Test3", "Test4"]
 	}
 	},
 
