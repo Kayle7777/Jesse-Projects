@@ -25,7 +25,7 @@ def rolljson(t):
         if t == "races":
             a = list(data[t])
             n = roll(0,len(a)-1)
-            d = data["races"][a[n]]; b = list(d.keys()); c = list(d.values())
+            d = data[t][a[n]]; b = list(d.keys()); c = list(d.values())
             y = [list(l) for l in zip(b, c)]
             d = [dict(statslist),dict(y)]
             defaultd = defaultdict(list)
@@ -41,7 +41,9 @@ def rolljson(t):
 
 raceresult = rolljson("races") # This returns a list ['Name of race', [racial bonuses], {Statslists with racial bonuses}]
 classresult = rolljson("classes") # This returns a list [Name of class, [proficiencies of class]]
-print("You are a " + str(raceresult[0]) + " " + str(classresult[0]) + " " + "which gives bonus racial stats: " + str(dict(raceresult[1])) + "\n\n" + "Your starting proficiencies from being a " + str(classresult[0]) + " are: " + str(classresult[1]) + "\n\n" + "Your stat list with racial bonuses added is: " + str(raceresult[2]))
+print("You are a " + str(raceresult[0]) + " " + str(classresult[0]) + " " + "which gives bonus racial stats: " + str(dict(raceresult[1]))
+    + "\n\n" +  "Your stat list with racial bonuses added is: "
+    + str(raceresult[2]) + "\n\n" + "Your starting proficiencies from being a " + str(classresult[0]) + " are: " + str(classresult[1]))
 # EXAMPLE OUTPUT
 #You are a Stout Halfling Cleric which gives bonus racial stats: {'DEX': 2, 'CON': 1}
 
