@@ -17,7 +17,7 @@ for x in range(6):
     n = statsroller()
     statslist.append([stats[x], n])
 
-file = 'rollstufftest.json'
+file = 'rollstuff.json'
 
 def rolljson(t):
     with codecs.open(file, 'r', 'utf-8-sig') as data_file:
