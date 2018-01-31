@@ -137,5 +137,24 @@
 			"CON": 1,
 			"CHA": 1
 		}
-		}
+	},
+	"Backgrounds": {
+		"Acolyte": {},
+		"Charlatan":{},
+		"Criminal":{},
+		"Entertainer":{},
+		"Gladiator":{},
+		"Folk Hero":{},
+		"Guild Artisan":{},
+		"Merchant":{},
+		"Hermit:":{},
+		"Noble:":{},
+		"Knight":{},
+		"Outlander":{},
+		"Sage":{},
+		"Sailor":{},
+		"Pirate":{},
+		"Soldier":{},
+		"Urchin":{}
+	}
 }
