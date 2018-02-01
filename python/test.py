@@ -29,6 +29,7 @@ def rolljson(t):
 
 racestuff = rolljson("race")
 classstuff = rolljson("class")
+backgroundstuff = rolljson("background")
 
 def racialstats(t):
     file = "data/race.json"
@@ -47,3 +48,4 @@ print(statslist)
 print(racialstats(racestuff))
 print(str(racestuff[0]))
 print(str(classstuff[0]))
+print(str(backgroundstuff[0]))
