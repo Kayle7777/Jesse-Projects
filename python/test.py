@@ -24,10 +24,11 @@ def rolljson(t):
         namelist = [data[t][n]["name"] for n in range(len(data[t]))]
         rtd = roll(0,len(namelist)-1)
         pick = namelist[rtd]
-        racestats = data[t][rtd]["ability"]
-        print(racestats)
-        if 'choose' in racestats.keys():
-            print("test")
+        if t == "race":
+            racestats = data[t][rtd]["ability"]
+            print(racestats)
+            if 'choose' in racestats.keys():
+                print("test")
 #        defaultd = defaultdict(list)
 #        for k,v in racestats:
 #            defaultd[k].append(v)
@@ -36,7 +37,7 @@ def rolljson(t):
         return pick
 
 print(rolljson("race"))
-
+print(rolljson("class"))
 
 
 
