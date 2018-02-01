@@ -35,8 +35,8 @@ def racialstats(t):
     with codecs.open(file, 'r', 'utf-8-sig') as data_file:
         data = json.load(data_file)
         racestats = data["race"][racestuff[1]]["ability"]
-        if 'choose' in racestats.keys():
-            print("test")
+#        if 'choose' in racestats.keys():
+#            print("test")
         defaultd = defaultdict(list)
         for k,v in chain(statslist.items(),racestats.items()):
             defaultd[k].append(v)
