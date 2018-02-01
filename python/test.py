@@ -25,7 +25,7 @@ def rolljson(t):
         namelist = [data[t][n]["name"] for n in range(len(data[t]))]
         rtd = roll(0,len(namelist)-1)
         pick = namelist[rtd]
-        return [pick, rtd] # [classname, number rolled (useful for using same number in json tree later)]
+        return [pick, rtd] # [name, number rolled (useful for using same number in json tree later)]
 
 racestuff = rolljson("race")
 classstuff = rolljson("class")
