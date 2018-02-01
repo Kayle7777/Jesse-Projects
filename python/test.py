@@ -13,7 +13,7 @@ def statsroller():
 
 statslist = []
 for x in range(6):
-    stats = ["STR","DEX","CON","INT","WIS","CHA"]
+    stats = ["str","dex","con","int","wis","cha"]
     n = statsroller()
     statslist.append([stats[x], n])
 
@@ -25,12 +25,15 @@ def rolljson(t):
         rtd = roll(0,len(namelist)-1)
         pick = namelist[rtd]
         racestats = data[t][rtd]["ability"]
-        defaultd = defaultdict(list)
+        print(racestats)
+        if 'choose' in racestats.keys():
+            print("test")
+#        defaultd = defaultdict(list)
 #        for k,v in racestats:
 #            defaultd[k].append(v)
 #        defaultd = dict(defaultd);statslist2 = dict([(key, sum(values)) for key, values in defaultd.items()])
 
-        return pick, racestats
+        return pick
 
 print(rolljson("race"))
 
