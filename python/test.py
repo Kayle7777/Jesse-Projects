@@ -16,6 +16,7 @@ for x in range(6):
     stats = ["str","dex","con","int","wis","cha"]
     n = statsroller()
     statslist.append([stats[x], n])
+statslist = dict(statslist)
 
 def rolljson(t):
     file = "data/" + t + ".json"
@@ -26,16 +27,19 @@ def rolljson(t):
         pick = namelist[rtd]
         if t == "race":
             racestats = data[t][rtd]["ability"]
-            print(racestats)
+            print(racestats,statslist)
             if 'choose' in racestats.keys():
                 print("test")
+            defaultd = defaultdict(list)
+            for k,v in chain(statslist.items(),racestats.items()):
+                defaultd[k].append(v)
+            fullstats = dict([(key, sum(values)) for key, values in defaultd.items()])
 #        defaultd = defaultdict(list)
 #        for k,v in racestats:
 #            defaultd[k].append(v)
 #        defaultd = dict(defaultd);statslist2 = dict([(key, sum(values)) for key, values in defaultd.items()])
 
         return pick
-
 print(rolljson("race"))
 print(rolljson("class"))
 
