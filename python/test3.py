@@ -17,9 +17,9 @@ for x in range(6):
     n = statsroller()
     statslist.append([stats[x], n])
 
-file = 'rollstufftest.json'
 
 def rolljson(t):
+    file = "data/" + t + ".json"
     with codecs.open(file, 'r', 'utf-8-sig') as data_file:
         data = json.load(data_file)
         if t == "races":
