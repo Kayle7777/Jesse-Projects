@@ -21,8 +21,18 @@ def rolljson(t):
     file = "data/" + t + ".json"
     with codecs.open(file, 'r', 'utf-8-sig') as data_file:
         data = json.load(data_file)
+        namelist = [data[t][n]["name"] for n in range(len(data[t]))]
+        rtd = roll(0,len(namelist)-1)
+        pick = namelist[rtd]
+        racestats = data[t][rtd]["ability"]
+        defaultd = defaultdict(list)
+#        for k,v in racestats:
+#            defaultd[k].append(v)
+#        defaultd = dict(defaultd);statslist2 = dict([(key, sum(values)) for key, values in defaultd.items()])
 
+        return pick, racestats
 
+print(rolljson("race"))
 
 
 
@@ -33,8 +43,24 @@ def rolljson(t):
     file = "data/" + t + ".json"
     with codecs.open(file, 'r', 'utf-8-sig') as data_file:
         data = json.load(data_file)
-        bgList = [data[t][n]["name"] for n in range(len(data[t]))]
-        return bgList
+        namelist = [data[t][n]["name"] for n in range(len(data[t]))]
+            if t == "races":
+                a = list(data[t])
+                n = roll(0,len(a)-1)
+                d = data[t][a[n]]; b = list(d.keys()); c = list(d.values())
+                y = [list(l) for l in zip(b, c)]
+                d = [dict(statslist),dict(y)]
+                defaultd = defaultdict(list)
+                for k,v in chain(d[0].items(),d[1].items()):
+                    defaultd[k].append(v)
+                defaultd = dict(defaultd);statslist2 = dict([(key, sum(values)) for key, values in defaultd.items()])
+                return [a[n], y, statslist2]
+            if t == "classes":
+                a = list(data[t])
+                n = roll(0,len(a)-1)
+                proflist = data[t][a[n]]["Proficiencies"]
+                return [a[n], proflist]
+
 
 print(rolljson("class"))
 """
