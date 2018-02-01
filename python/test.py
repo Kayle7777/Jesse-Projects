@@ -25,25 +25,27 @@ def rolljson(t):
         namelist = [data[t][n]["name"] for n in range(len(data[t]))]
         rtd = roll(0,len(namelist)-1)
         pick = namelist[rtd]
-        if t == "race":
-            racestats = data[t][rtd]["ability"]
-            print(racestats,statslist)
-            if 'choose' in racestats.keys():
-                print("test")
-            defaultd = defaultdict(list)
-            for k,v in chain(statslist.items(),racestats.items()):
-                defaultd[k].append(v)
-            fullstats = dict([(key, sum(values)) for key, values in defaultd.items()])
-#        defaultd = defaultdict(list)
-#        for k,v in racestats:
-#            defaultd[k].append(v)
-#        defaultd = dict(defaultd);statslist2 = dict([(key, sum(values)) for key, values in defaultd.items()])
+        return [pick, rtd]
 
-        return pick
-print(rolljson("race"))
-print(rolljson("class"))
+racestuff = rolljson("race")
+classstuff = rolljson("class")
 
-
+def racialstats(t):
+    file = "data/race.json"
+    with codecs.open(file, 'r', 'utf-8-sig') as data_file:
+        data = json.load(data_file)
+        racestats = data["race"][racestuff[1]]["ability"]
+        if 'choose' in racestats.keys():
+            print("test")
+        defaultd = defaultdict(list)
+        for k,v in chain(statslist.items(),racestats.items()):
+            defaultd[k].append(v)
+        fullstats = dict([(key, sum(values)) for key, values in defaultd.items()])
+        return fullstats
+print(statslist)
+print(racialstats(racestuff))
+print(str(classstuff[0]))
+print(str(racestuff[0]))
 
 
 """
