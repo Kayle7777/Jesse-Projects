@@ -25,7 +25,7 @@ def rolljson(t):
         namelist = [data[t][n]["name"] for n in range(len(data[t]))]
         rtd = roll(0,len(namelist)-1)
         pick = namelist[rtd]
-        return [pick, rtd]
+        return [pick, rtd] # [classname, number rolled (useful for using same number in json tree later)]
 
 racestuff = rolljson("race")
 classstuff = rolljson("class")
@@ -42,10 +42,11 @@ def racialstats(t):
             defaultd[k].append(v)
         fullstats = dict([(key, sum(values)) for key, values in defaultd.items()])
         return fullstats
+
 print(statslist)
 print(racialstats(racestuff))
-print(str(classstuff[0]))
 print(str(racestuff[0]))
+print(str(classstuff[0]))
 
 
 """
