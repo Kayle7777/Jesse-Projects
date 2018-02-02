@@ -22,7 +22,7 @@ def rolljson(t):
     file = "data/" + t + ".json"
     with codecs.open(file, 'r', 'utf-8-sig') as data_file:
         data = json.load(data_file)
-        namelist = [data[t][n]["name"] for n in range(len(data[t])) if data[t][n]["source"] == "PHB" or data[t][n]["source"] == "XGE"]
+        namelist = [data[t][n]["name"] for n in range(len(data[t])) if data[t][n]["source"] == "PHB" or data[t][n]["source"] == "XGE" or data[t][n]["source"] == "VGM"]
         rtd = roll(0,len(namelist)-1)
         pick = namelist[rtd]
         return pick
