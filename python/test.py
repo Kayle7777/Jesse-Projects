@@ -36,12 +36,14 @@ def racialstats(t):
     with codecs.open(file, 'r', 'utf-8-sig') as data_file:
         data = json.load(data_file)
         fullnamelist = [data["race"][n]["name"] for n in range(len(data["race"]))]
-#        if 'choose' in racestats.keys():
-#            print("test")
         racestats = data["race"][fullnamelist.index(t)]["ability"]
         defaultd = defaultdict(list)
-        for k,v in chain(statslist.items(),racestats.items()):
-            defaultd[k].append(v)
+        if 'choose' in racestats.keys():
+#            print(racestats)
+            print(racestats['choose'][0]["from"], racestats['choose'][0]['count'])
+        else:
+            for k,v in chain(statslist.items(),racestats.items()):
+                defaultd[k].append(v)
         fullstats = dict([(key, sum(values)) for key, values in defaultd.items()])
         return fullstats
 
