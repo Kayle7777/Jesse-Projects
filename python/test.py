@@ -22,10 +22,10 @@ def rolljson(t):
     file = "data/" + t + ".json"
     with codecs.open(file, 'r', 'utf-8-sig') as data_file:
         data = json.load(data_file)
-        namelist = [data[t][n]["name"] for n in range(len(data[t])) if data[t][n]["source"] == "PHB" or data[t][n]["source"] == "VGM" or data[t][n]["source"] == "XGE"]
+        namelist = [data[t][n]["name"] for n in range(len(data[t])) if data[t][n]["source"] == "PHB" or data[t][n]["source"] == "XGE"]
         rtd = roll(0,len(namelist)-1)
         pick = namelist[rtd]
-        return [pick, rtd, namelist] # [name, number rolled (useful for using same number in json tree later)]
+        return pick
 
 racestuff = rolljson("race")
 classstuff = rolljson("class")
@@ -36,10 +36,9 @@ def racialstats(t):
     with codecs.open(file, 'r', 'utf-8-sig') as data_file:
         data = json.load(data_file)
         fullnamelist = [data["race"][n]["name"] for n in range(len(data["race"]))]
-        racestats = data["race"][fullnamelist.index(racestuff[0])]["ability"]
-        print(racestats)
 #        if 'choose' in racestats.keys():
 #            print("test")
+        racestats = data["race"][fullnamelist.index(t)]["ability"]
         defaultd = defaultdict(list)
         for k,v in chain(statslist.items(),racestats.items()):
             defaultd[k].append(v)
@@ -48,6 +47,6 @@ def racialstats(t):
 
 print(statslist)
 print(racialstats(racestuff))
-print(str(racestuff[0]))
-print(str(classstuff[0]))
-print(str(backgroundstuff[0]))
+print(str(racestuff))
+print(str(classstuff))
+print(str(backgroundstuff))
