@@ -39,8 +39,12 @@ def racialstats(t):
         racestats = data["race"][fullnamelist.index(t)]["ability"]
         defaultd = defaultdict(list)
         if 'choose' in racestats.keys():
-#            print(racestats)
-            print(racestats['choose'][0]["from"], racestats['choose'][0]['count'])
+            p = [[k, 1] for k in racestats['choose'][0]['from']]
+            random.shuffle(p)
+            p = [p[x] for x in range(racestats['choose'][0]['count'])]
+            print(dict(p))
+            for k,v in chain(statslist.items(),dict(p).items()):
+                defaultd[k].append(v)
         else:
             for k,v in chain(statslist.items(),racestats.items()):
                 defaultd[k].append(v)
