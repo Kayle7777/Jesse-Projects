@@ -4,7 +4,7 @@ from itertools import chain
 
 def dictchain(adict, bdict):
     defaultd = defaultdict(list)
-    for k,v in chain(adict.items(),bdict.items()):
+    for k,v in chain(dict(adict).items(),dict(bdict).items()):
         defaultd[k].append(v)
     return defaultd
 
@@ -26,7 +26,7 @@ statslist = dict(statslist)
 
 def rolljson(t):
     file = "data/" + t + ".json"
-    with codecs.open(file, 'r', 'utf-8-sig') as data_file:
+    with codecs.open(file, "r", "utf-8-sig") as data_file:
         data = json.load(data_file)
         if t == "feats":
             namelist = [data[t][n]["name"] for n in range(len(data[t])) if data[t][n]["source"] == "PHB" or data[t][n]["source"] == "VGM"]
@@ -45,17 +45,17 @@ if racestuff == "Human (Variant)":
 
 def racialstats(t):
     file = "data/race.json"
-    with codecs.open(file, 'r', 'utf-8-sig') as data_file:
+    with codecs.open(file, "r", "utf-8-sig") as data_file:
         data = json.load(data_file)
         fullnamelist = [data["race"][n]["name"] for n in range(len(data["race"]))]
         racestats = data["race"][fullnamelist.index(t)]["ability"]
         defaultd = defaultdict(list)
-        if 'choose' in racestats.keys():
-            racestats = [[k, 1] for k in racestats['choose'][0]['from']]
+        if "choose" in racestats.keys():
+            racestats = [[k, 1] for k in racestats["choose"][0]["from"]]
             random.shuffle(racestats)
-            racestats = [p[x] for x in range(racestats['choose'][0]['count'])]
+            racestats = [racestats[x] for x in range(data["race"][fullnamelist.index(t)]["ability"]["choose"][0]["count"])]
             if racestuff == "Half-Elf":
-                racestats.append(['cha', 2])
+                racestats.append(["cha", 2])
         fullstats = dict([(key, sum(values)) for key, values in dictchain(statslist, racestats).items()])
         return fullstats
 
