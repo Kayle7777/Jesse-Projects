@@ -22,11 +22,7 @@ def rolljson(t):
     file = "data/" + t + ".json"
     with codecs.open(file, 'r', 'utf-8-sig') as data_file:
         data = json.load(data_file)
-        if t == "race":
-            namelist = ["Half-Elf"]
-        else:
-            namelist = [data[t][n]["name"] for n in range(len(data[t])) if data[t][n]["source"] == "PHB" or data[t][n]["source"] == "XGE" or data[t][n]["source"] == "VGM"]
-#        namelist = [data[t][n]["name"] for n in range(len(data[t])) if data[t][n]["source"] == "PHB" or data[t][n]["source"] == "XGE" or data[t][n]["source"] == "VGM"]
+        namelist = [data[t][n]["name"] for n in range(len(data[t])) if data[t][n]["source"] == "PHB" or data[t][n]["source"] == "XGE" or data[t][n]["source"] == "VGM"]
         rtd = roll(0,len(namelist)-1)
         pick = namelist[rtd]
         return pick
@@ -46,6 +42,8 @@ def racialstats(t):
             p = [[k, 1] for k in racestats['choose'][0]['from']]
             random.shuffle(p)
             p = [p[x] for x in range(racestats['choose'][0]['count'])]
+            if racestuff == "Half-Elf":
+                p.append(['cha', 2])
             for k,v in chain(statslist.items(),dict(p).items()):
                 defaultd[k].append(v)
         else:
