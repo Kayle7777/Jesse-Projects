@@ -2,6 +2,12 @@ import random, json, codecs
 from collections import defaultdict
 from itertools import chain
 
+def dictchain(adict, bdict):
+    defaultd = defaultdict(list)
+    for k,v in chain(adict.items(),bdict.items()):
+        defaultd[k].append(v)
+    return defaultd
+
 def roll(min, max):
     return random.randint(min,max)
 
@@ -45,17 +51,12 @@ def racialstats(t):
         racestats = data["race"][fullnamelist.index(t)]["ability"]
         defaultd = defaultdict(list)
         if 'choose' in racestats.keys():
-            p = [[k, 1] for k in racestats['choose'][0]['from']]
-            random.shuffle(p)
-            p = [p[x] for x in range(racestats['choose'][0]['count'])]
+            racestats = [[k, 1] for k in racestats['choose'][0]['from']]
+            random.shuffle(racestats)
+            racestats = [p[x] for x in range(racestats['choose'][0]['count'])]
             if racestuff == "Half-Elf":
-                p.append(['cha', 2])
-            for k,v in chain(statslist.items(),dict(p).items()):
-                defaultd[k].append(v)
-        else:
-            for k,v in chain(statslist.items(),racestats.items()):
-                defaultd[k].append(v)
-        fullstats = dict([(key, sum(values)) for key, values in defaultd.items()])
+                racestats.append(['cha', 2])
+        fullstats = dict([(key, sum(values)) for key, values in dictchain(statslist, racestats).items()])
         return fullstats
 
 print(statslist)
