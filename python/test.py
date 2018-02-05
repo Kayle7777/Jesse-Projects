@@ -17,6 +17,20 @@ def statsroller():
     diceroll = sum(diceroll)
     return diceroll # this is just an integer of 4d6 minus the lowest
 
+#def getprofs(t, pick):
+#    file = "data/" + t + ".json"
+#    with codecs.open(file, "r", "utf-8-sig") as data_file:
+#        data = json.load(data_file)
+#        fullnamelist = [data[t][n]["name"] for n in range(len(data[t]))]
+#        print(data[t][fullnamelist.index(pick)]["proficiency"])
+#        if t == "race":
+#            profs = [str(data["race"][fullnamelist.index(pick)]["proficiency"]) if data["race"][fullnamelist.index(pick)]["proficiency"] in data["race"]]
+#        if t == "class":
+#            profs = [data[t][fullnamelist.index(pick)]["proficiencies"] + data[t][fullproflist.index(pick)][pick]["startingProficiencies"]]
+#        if t == "background":
+#            profs = data[t][fullnamelist.index(pick)]["skillProficiencies"]
+#        return profs
+
 statslist = []
 for x in range(6):
     stats = ["str","dex","con","int","wis","cha"]
@@ -58,6 +72,8 @@ def racialstats(t):
                 racestats.append(["cha", 2])
         fullstats = dict([(key, sum(values)) for key, values in dictchain(statslist, racestats).items()])
         return fullstats
+
+#sumProfs = [getprofs("race", racestuff)] + [getprofs("class", classstuff)] + [getprofs("background", backgroundstuff)];print(sumProfs)
 
 print(statslist)
 print(racialstats(racestuff))
