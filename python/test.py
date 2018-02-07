@@ -2,7 +2,7 @@ import random, json, codecs
 from collections import defaultdict
 from itertools import chain
 
-def dictchain(adict, bdict):
+def dictChain(adict, bdict):
     defaultd = defaultdict(list)
     for k,v in chain(dict(adict).items(),dict(bdict).items()):
         defaultd[k].append(v)
@@ -11,18 +11,28 @@ def dictchain(adict, bdict):
 def roll(min, max):
     return random.randint(min,max)
 
-def statsroller():
+def statsRoller():
     diceroll = [roll(1,6),roll(1,6),roll(1,6),roll(1,6)]
     diceroll.remove(min(diceroll))
     diceroll = sum(diceroll)
     return diceroll # this is just an integer of 4d6 minus the lowest
 
-def getprofs(t, pick):
+def shuffler(data, count):
+    profchoices = data
+    random.shuffle(data)
+    data = [data[x] for x in range(count)]
+    return data
+
+def inList(list1, list2):
+    inlist = [x for x in list2 if x in list1]
+    return inlist
+
+def getProfs(t, pick):
     file = "data/" + t + ".json"
     with codecs.open(file, "r", "utf-8-sig") as data_file:
         data = json.load(data_file)
-        fullnamelist = [data[t][n]["name"] for n in range(len(data[t]))]
         profs = []
+        fullnamelist = [data[t][n]["name"] for n in range(len(data[t]))]
         if t == "race":
             raceSkillData = data["race"][fullnamelist.index(pick)]
             if "proficiency" in raceSkillData:
@@ -30,10 +40,7 @@ def getprofs(t, pick):
         if t == "class":
             classSkillData = data["class"][fullnamelist.index(pick)]["startingProficiencies"]["skills"]
             if "choose" in classSkillData:
-                profchoices = classSkillData["from"]
-                random.shuffle(profchoices)
-                profchoices = [profchoices[x] for x in range(classSkillData["choose"])]
-                profs.extend(profchoices)
+                profs.extend(shuffler(classSkillData["from"], classSkillData["choose"]))
             else:
                 profs.extend(data[t][fullnamelist.index(pick)]["startingProficiencies"])
             savingThrowData = [data["class"][fullnamelist.index(pick)]["proficiency"][x].title() + " Saving Throws" for x in range(2)]
@@ -43,8 +50,7 @@ def getprofs(t, pick):
             profs.append(backgroundSkillData)
         return profs
 
-
-def rolljson(t):
+def rollJson(t):
     file = "data/" + t + ".json"
     with codecs.open(file, "r", "utf-8-sig") as data_file:
         data = json.load(data_file)
@@ -56,7 +62,7 @@ def rolljson(t):
         pick = namelist[rtd]
         return pick
 
-def racialstats(t):
+def racialStats(t):
     file = "data/race.json"
     with codecs.open(file, "r", "utf-8-sig") as data_file:
         data = json.load(data_file)
@@ -67,39 +73,39 @@ def racialstats(t):
             racestats = [[k, 1] for k in racestats["choose"][0]["from"]]
             random.shuffle(racestats)
             racestats = [racestats[x] for x in range(data["race"][fullnamelist.index(t)]["ability"]["choose"][0]["count"])]
-            if racestuff == "Half-Elf":
+            if raceStuff == "Half-Elf":
                 racestats.append(["cha", 2])
-        fullstats = dict([(key, sum(values)) for key, values in dictchain(statslist, racestats).items()])
+        fullstats = dict([(key, sum(values)) for key, values in dictChain(statslist, racestats).items()])
         return fullstats
 
 statslist = []
 for x in range(6):
     stats = ["str","dex","con","int","wis","cha"]
-    n = statsroller()
+    n = statsRoller()
     statslist.append([stats[x], n])
 statslist = dict(statslist)
 
-racestuff = rolljson("race")
-classstuff = rolljson("class")
-backgroundstuff = rolljson("background")
+raceStuff = rollJson("race")
+classStuff = rollJson("class")
+backgroundStuff = rollJson("background")
 
-sumProfs = [getprofs("background", backgroundstuff), getprofs("class", classstuff)]
-if getprofs("race", racestuff) != []:
-    sumProfs.append(getprofs("race", racestuff))
+sumProfs = [getProfs("background", backgroundStuff) + getProfs("class", classStuff)]
+if getProfs("race", raceStuff) != []:
+    sumProfs.append(getProfs("race", raceStuff))
 
-featstuff = None
-if racestuff == "Human (Variant)":
-    checkprofs = ["Human", classstuff, backgroundstuff];checkprofs.extend(sumProfs)
-    print(checkprofs)
-    featstuff = rolljson("feat")
+featStuff = None
+if raceStuff == "Human (Variant)":
+    checkProfs = ["Human", classStuff, backgroundStuff];checkProfs.extend(sumProfs)
+    print(checkProfs)
+    featStuff = rollJson("feat")
 
 
 print(str(statslist) + "\n"
-+ str(racialstats(racestuff)) + "\n"
-+ str(racestuff) + "\n"
-+ str(classstuff) + "\n"
-+ str(backgroundstuff) + "\n"
++ str(racialStats(raceStuff)) + "\n"
++ str(raceStuff) + "\n"
++ str(classStuff) + "\n"
++ str(backgroundStuff) + "\n"
 + str(sumProfs))
 
-if featstuff != None:
-    print(str(featstuff))
+if featStuff != None:
+    print(str(featStuff))
