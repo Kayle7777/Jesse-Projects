@@ -78,12 +78,8 @@ def racialStats(t):
         fullstats = dict([(key, sum(values)) for key, values in dictChain(statslist, racestats).items()])
         return fullstats
 
-statslist = []
-for x in range(6):
-    stats = ["str","dex","con","int","wis","cha"]
-    n = statsRoller()
-    statslist.append([stats[x], n])
-statslist = dict(statslist)
+
+statslist = {x: statsRoller() for x in ["str","dex","con","int","wis","cha"]}
 
 raceStuff = rollJson("race")
 classStuff = rollJson("class")
