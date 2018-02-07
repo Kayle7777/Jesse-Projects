@@ -68,14 +68,13 @@ def racialStats(t):
         data = json.load(data_file)
         fullnamelist = [data["race"][n]["name"] for n in range(len(data["race"]))]
         racestats = data["race"][fullnamelist.index(t)]["ability"]
-        defaultd = defaultdict(list)
         if "choose" in racestats.keys():
             racestats = [[k, 1] for k in racestats["choose"][0]["from"]]
             random.shuffle(racestats)
             racestats = [racestats[x] for x in range(data["race"][fullnamelist.index(t)]["ability"]["choose"][0]["count"])]
             if raceStuff == "Half-Elf":
                 racestats.append(["cha", 2])
-        fullstats = dict([(key, sum(values)) for key, values in dictChain(statslist, racestats).items()])
+        fullstats = {key: sum(values) for (key, values) in dictChain(statslist, racestats).items()}
         return fullstats
 
 
