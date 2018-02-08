@@ -1,6 +1,7 @@
 import random, json, codecs
 from collections import defaultdict
 from itertools import chain
+from pprint import *
 
 def dictChain(adict, bdict):
     defaultd = defaultdict(list)
@@ -69,7 +70,7 @@ def racialStats(t):
             if raceStuff == "Half-Elf":
                 racestats.append(["cha", 2])
         fullstats = {key: sum(values) for (key, values) in dictChain(statslist, racestats).items()}
-        return fullstats
+        return [fullstats, racestats]
 
 statslist = {x: statsRoller() for x in ["str","dex","con","int","wis","cha"]}
 
@@ -87,13 +88,33 @@ if raceStuff == "Human (Variant)":
 #    print(checkProfs)
     featStuff = rollJson("feat")
 
+jsonPush = {}
+jsonPush ["Fullstats"] = {
+"beforeRaceBonus": statslist,
+"afterRaceBonus": racialStats(raceStuff)[0]
+}
+jsonPush ["Race"] = {
+"name": raceStuff,
+"statsBonus": racialStats(raceStuff)[1],
+"raceProficiencies": getProfs("race", raceStuff)
+}
+jsonPush ["Class"] = {
+"name": classStuff,
+"subclass": None,
+"classProficiencies": getProfs("class", classStuff)
+}
+jsonPush ["Background"] = {
+"name": backgroundStuff,
+"backgroundProficiencies": getProfs("background", backgroundStuff)
+}
+PrettyPrinter(indent=2).pprint(jsonPush)
 
-print(str(statslist) + "\n"
-+ str(racialStats(raceStuff)) + "\n"
+"""print(str(statslist) + "\n"
++ str(racialStats(raceStuff)[0]) + "\n"
 + str(raceStuff) + "\n"
 + str(classStuff) + "\n"
 + str(backgroundStuff) + "\n"
-+ str(sumProfs))
++ str(sumProfs))"""
 
 if featStuff != None:
     print(str(featStuff))
