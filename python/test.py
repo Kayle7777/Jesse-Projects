@@ -31,21 +31,21 @@ def getProfs(t, pick):
     with codecs.open(file, "r", "utf-8-sig") as data_file:
         data = json.load(data_file)
         profs = []
-        fullnamelist = [data[t][n]["name"] for n in range(len(data[t]))]
+        fnl = [data[t][n]["name"] for n in range(len(data[t]))]
         if t == "race":
-            raceSkillData = data["race"][fullnamelist.index(pick)]
+            raceSkillData = data["race"][fnl.index(pick)]
             if "proficiency" in raceSkillData:
                 profs.append(raceSkillData["proficiency"])
         if t == "class":
-            classSkillData = data["class"][fullnamelist.index(pick)]["startingProficiencies"]["skills"]
+            classSkillData = data["class"][fnl.index(pick)]["startingProficiencies"]["skills"]
             if "choose" in classSkillData:
                 profs.extend(listShuffler(classSkillData["from"], classSkillData["choose"]))
             else:
-                profs.extend(data[t][fullnamelist.index(pick)]["startingProficiencies"])
-            savingThrowData = [data["class"][fullnamelist.index(pick)]["proficiency"][x].title() + " Saving Throws" for x in range(2)]
+                profs.extend(data[t][fnl.index(pick)]["startingProficiencies"])
+            savingThrowData = [data["class"][fnl.index(pick)]["proficiency"][x].title() + " Saving Throws" for x in range(2)]
             profs.extend(savingThrowData)
         if t == "background":
-            backgroundSkillData = data[t][fullnamelist.index(pick)]["skillProficiencies"]
+            backgroundSkillData = data[t][fnl.index(pick)]["skillProficiencies"]
             profs.append(backgroundSkillData)
         return profs
 
@@ -65,10 +65,10 @@ def racialStats(t):
     file = "data/race.json"
     with codecs.open(file, "r", "utf-8-sig") as data_file:
         data = json.load(data_file)
-        fullnamelist = [data["race"][n]["name"] for n in range(len(data["race"]))]
-        racestats = data["race"][fullnamelist.index(t)]["ability"]
+        fnl = [data["race"][n]["name"] for n in range(len(data["race"]))]
+        racestats = data["race"][fnl.index(t)]["ability"]
         if "choose" in racestats.keys():
-            racestats = listShuffler([[k, 1] for k in racestats["choose"][0]["from"]], data["race"][fullnamelist.index(t)]["ability"]["choose"][0]["count"])
+            racestats = listShuffler([[k, 1] for k in racestats["choose"][0]["from"]], data["race"][fnl.index(t)]["ability"]["choose"][0]["count"])
             if raceStuff == "Half-Elf":
                 racestats.append(["cha", 2])
         fullstats = {key: sum(values) for (key, values) in dictChain(statslist, racestats).items()}
