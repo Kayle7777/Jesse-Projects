@@ -17,8 +17,7 @@ def statsRoller():
     diceroll = sum(diceroll)
     return diceroll # this is just an integer of 4d6 minus the lowest
 
-def shuffler(data, count):
-    profchoices = data
+def listShuffler(data, count):
     random.shuffle(data)
     data = [data[x] for x in range(count)]
     return data
@@ -40,7 +39,7 @@ def getProfs(t, pick):
         if t == "class":
             classSkillData = data["class"][fullnamelist.index(pick)]["startingProficiencies"]["skills"]
             if "choose" in classSkillData:
-                profs.extend(shuffler(classSkillData["from"], classSkillData["choose"]))
+                profs.extend(listShuffler(classSkillData["from"], classSkillData["choose"]))
             else:
                 profs.extend(data[t][fullnamelist.index(pick)]["startingProficiencies"])
             savingThrowData = [data["class"][fullnamelist.index(pick)]["proficiency"][x].title() + " Saving Throws" for x in range(2)]
@@ -69,14 +68,11 @@ def racialStats(t):
         fullnamelist = [data["race"][n]["name"] for n in range(len(data["race"]))]
         racestats = data["race"][fullnamelist.index(t)]["ability"]
         if "choose" in racestats.keys():
-            racestats = [[k, 1] for k in racestats["choose"][0]["from"]]
-            random.shuffle(racestats)
-            racestats = [racestats[x] for x in range(data["race"][fullnamelist.index(t)]["ability"]["choose"][0]["count"])]
+            racestats = listShuffler([[k, 1] for k in racestats["choose"][0]["from"]], data["race"][fullnamelist.index(t)]["ability"]["choose"][0]["count"])
             if raceStuff == "Half-Elf":
                 racestats.append(["cha", 2])
         fullstats = {key: sum(values) for (key, values) in dictChain(statslist, racestats).items()}
         return fullstats
-
 
 statslist = {x: statsRoller() for x in ["str","dex","con","int","wis","cha"]}
 
