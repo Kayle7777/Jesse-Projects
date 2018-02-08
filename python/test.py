@@ -8,11 +8,8 @@ def dictChain(adict, bdict):
         defaultd[k].append(v)
     return defaultd
 
-def roll(min, max):
-    return random.randint(min,max)
-
 def statsRoller():
-    diceroll = [roll(1,6),roll(1,6),roll(1,6),roll(1,6)]
+    diceroll = [random.randint(1,6) for x in range(4)]
     diceroll.remove(min(diceroll))
     diceroll = sum(diceroll)
     return diceroll # this is just an integer of 4d6 minus the lowest
@@ -57,7 +54,7 @@ def rollJson(t):
             namelist = [data[t][n]["name"] for n in range(len(data[t])) if data[t][n]["source"] == "PHB" or data[t][n]["source"] == "VGM"]
         else:
             namelist = [data[t][n]["name"] for n in range(len(data[t])) if data[t][n]["source"] == "PHB" or data[t][n]["source"] == "XGE" or data[t][n]["source"] == "VGM"]
-        rtd = roll(0,len(namelist)-1)
+        rtd = random.randint(0,len(namelist)-1)
         pick = namelist[rtd]
         return pick
 
