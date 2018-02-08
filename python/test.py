@@ -90,8 +90,8 @@ if getProfs("race", raceStuff) != []:
 
 featStuff = None
 if raceStuff == "Human (Variant)":
-    checkProfs = ["Human", classStuff, backgroundStuff];checkProfs.extend(sumProfs)
-    print(checkProfs)
+#    checkProfs = ["Human", classStuff, backgroundStuff];checkProfs.extend(sumProfs)
+#    print(checkProfs)
     featStuff = rollJson("feat")
 
 
