@@ -89,8 +89,8 @@ if raceStuff == "Human (Variant)":
     featStuff = rollJson("feat")
 
 jsonPush = {}
-jsonPush ["Fullstats"] = {
-"beforeRaceBonus": statslist,
+jsonPush ["Stats"] = {
+#"beforeRaceBonus": statslist,
 "afterRaceBonus": racialStats(raceStuff)[0]
 }
 jsonPush ["Race"] = {
@@ -109,12 +109,25 @@ jsonPush ["Background"] = {
 }
 PrettyPrinter(indent=2).pprint(jsonPush)
 
-"""print(str(statslist) + "\n"
-+ str(racialStats(raceStuff)[0]) + "\n"
-+ str(raceStuff) + "\n"
-+ str(classStuff) + "\n"
-+ str(backgroundStuff) + "\n"
-+ str(sumProfs))"""
-
 if featStuff != None:
     print(str(featStuff))
+
+#EXAMPLE OUTPUT
+"""
+{ 'Background': { 'backgroundProficiencies': ['Athletics, Intimidation'],
+                  'name': 'Soldier'},
+  'Class': { 'classProficiencies': [ 'Nature',
+                                     'Religion',
+                                     'Int Saving Throws',
+                                     'Wis Saving Throws'],
+             'name': 'Druid',
+             'subclass': None},
+  'Race': { 'name': 'Triton',
+            'raceProficiencies': [],
+            'statsBonus': {'cha': 1, 'con': 1, 'str': 1}},
+  'Stats': { 'afterRaceBonus': { 'cha': 14,
+                                 'con': 8,
+                                 'dex': 12,
+                                 'int': 13,
+                                 'str': 14,
+                                 'wis': 11}}}"""
