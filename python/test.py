@@ -2,6 +2,7 @@ import random, json, codecs
 from collections import defaultdict
 from itertools import chain
 from pprint import *
+import objectpath
 
 def dictChain(adict, bdict):
     defaultd = defaultdict(list)
@@ -72,6 +73,15 @@ def racialStats(t):
         fullstats = {key: sum(values) for (key, values) in dictChain(statslist, racestats).items()}
         return [fullstats, racestats]
 
+def getEntries(t, pick):
+    file = "data/" + t + ".json"
+    with codecs.open(file, "r", "utf-8-sig") as data_file:
+        data = json.load(data_file)
+        fnl = [data[t][n]["name"] for n in range(len(data[t]))]
+        f = data[t][fnl.index(pick)]["entries"]
+        entry = [f[x] for x in range(4, len(f))]
+    return entry
+
 statslist = {x: statsRoller() for x in ["str","dex","con","int","wis","cha"]}
 
 raceStuff = rollJson("race")
@@ -107,11 +117,14 @@ jsonPush ["Background"] = {
 "name": backgroundStuff,
 "backgroundProficiencies": getProfs("background", backgroundStuff)
 }
-PrettyPrinter(indent=2).pprint(jsonPush)
 
 if featStuff != None:
-    print(str(featStuff))
+    jsonPush ["Feat"] = {
+    "name": featStuff,
 
+    }
+
+PrettyPrinter(indent=2).pprint(jsonPush)
 #EXAMPLE OUTPUT
 """
 { 'Background': { 'backgroundProficiencies': ['Athletics, Intimidation'],
