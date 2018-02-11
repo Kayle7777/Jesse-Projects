@@ -10,4 +10,4 @@ with codecs.open(file, "r", "utf-8-sig") as data_file:
     data = objectpath.Tree(f)
     fnl = [f["background"][n]["name"] for n in range(len(f["background"]))]
     test = "name"
-    print(list(data.execute("$.background[@.source is PHB].("+test+", source)")))
+    print(list(data.execute("$.background[@.source is PHB].(" + test + ", source)")))
