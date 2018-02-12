@@ -13,8 +13,7 @@ def dictChain(adict, bdict):
 def statsRoller():
     diceroll = [random.randint(1,6) for x in range(4)]
     diceroll.remove(min(diceroll))
-    diceroll = sum(diceroll)
-    return diceroll # this is just an integer of 4d6 minus the lowest
+    return sum(diceroll) # this is just an integer of 4d6 minus the lowest
 
 def listShuffler(data, count):
     random.shuffle(data)
@@ -35,7 +34,6 @@ def getStuff(t, pick):
                 profs.append(raceSkillData["proficiency"])
         if t == "class":
             classStuff = data["class"][fnl.index(pick)]
-            PrettyPrinter().pprint(classStuff)
             classSkillData = classStuff["startingProficiencies"]["skills"]
             if "choose" in classSkillData:
                 profs.extend(listShuffler(classSkillData["from"], classSkillData["choose"]))
@@ -114,6 +112,7 @@ if featStuff != None:
     "name": featStuff
     }
 
+#PrettyPrinter(indent=2).pprint(jsonPush)
 
-#with open("sheets/" + raceStuff + " " + classStuff + " " + backgroundStuff + ".json", "w") as f:
-#    f.write(json.dumps(jsonPush, indent=2))
+with open("sheets/" + raceStuff + " " + classStuff + " " + backgroundStuff + ".json", "w") as f:
+    f.write(json.dumps(jsonPush, indent=2))

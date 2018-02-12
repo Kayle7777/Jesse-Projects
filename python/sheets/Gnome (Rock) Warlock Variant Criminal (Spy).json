@@ -1,0 +1,36 @@
+{
+  "Stats": {
+    "afterRaceBonus": {
+      "str": 13,
+      "dex": 9,
+      "con": 14,
+      "int": 19,
+      "wis": 11,
+      "cha": 14
+    }
+  },
+  "Race": {
+    "name": "Gnome (Rock)",
+    "statsBonus": {
+      "int": 2,
+      "con": 1
+    },
+    "raceProficiencies": []
+  },
+  "Class": {
+    "name": "Warlock",
+    "subclass": null,
+    "classProficiencies": [
+      "Religion",
+      "Investigation",
+      "Wis Saving Throws",
+      "Cha Saving Throws"
+    ]
+  },
+  "Background": {
+    "name": "Variant Criminal (Spy)",
+    "backgroundProficiencies": [
+      "Deception, Stealth"
+    ]
+  }
+}

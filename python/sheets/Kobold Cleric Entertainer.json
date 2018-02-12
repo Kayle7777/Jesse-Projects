@@ -1,0 +1,36 @@
+{
+  "Stats": {
+    "afterRaceBonus": {
+      "str": 11,
+      "dex": 17,
+      "con": 12,
+      "int": 15,
+      "wis": 10,
+      "cha": 12
+    }
+  },
+  "Race": {
+    "name": "Kobold",
+    "statsBonus": {
+      "dex": 2,
+      "str": -2
+    },
+    "raceProficiencies": []
+  },
+  "Class": {
+    "name": "Cleric",
+    "subclass": null,
+    "classProficiencies": [
+      "Insight",
+      "Persuasion",
+      "Wis Saving Throws",
+      "Cha Saving Throws"
+    ]
+  },
+  "Background": {
+    "name": "Entertainer",
+    "backgroundProficiencies": [
+      "Acrobatics, Performance"
+    ]
+  }
+}

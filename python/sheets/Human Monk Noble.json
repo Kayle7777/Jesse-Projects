@@ -1,0 +1,40 @@
+{
+  "Stats": {
+    "afterRaceBonus": {
+      "str": 15,
+      "dex": 13,
+      "con": 12,
+      "int": 17,
+      "wis": 12,
+      "cha": 10
+    }
+  },
+  "Race": {
+    "name": "Human",
+    "statsBonus": {
+      "str": 1,
+      "dex": 1,
+      "con": 1,
+      "int": 1,
+      "wis": 1,
+      "cha": 1
+    },
+    "raceProficiencies": []
+  },
+  "Class": {
+    "name": "Monk",
+    "subclass": null,
+    "classProficiencies": [
+      "Acrobatics",
+      "Athletics",
+      "Str Saving Throws",
+      "Dex Saving Throws"
+    ]
+  },
+  "Background": {
+    "name": "Noble",
+    "backgroundProficiencies": [
+      "History, Persuasion"
+    ]
+  }
+}
