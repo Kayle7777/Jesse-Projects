@@ -62,7 +62,7 @@ def racialStats(t):
     with codecs.open(file, "r", "utf-8-sig") as data_file:
         data = json.load(data_file)
         fnl = [data["race"][n]["name"] for n in range(len(data["race"]))]
-        racestats = ["race"][fnl.index(t)]["ability"]
+        racestats = data["race"][fnl.index(t)]["ability"]
         if "choose" in racestats.keys():
             racestats = listShuffler([[k, 1] for k in racestats["choose"][0]["from"]], data["race"][fnl.index(t)]["ability"]["choose"][0]["count"])
             if raceStuff == "Half-Elf":
