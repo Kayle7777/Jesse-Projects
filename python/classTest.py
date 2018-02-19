@@ -4,6 +4,7 @@ from pprint import *
 
 class CharacterSheet:
     "For learning"
+    _instances = set()
 
     def __init__(self, t):
 
@@ -14,6 +15,7 @@ class CharacterSheet:
         rtd = random.randint(0,len(self.namelist)-1)
         self.name = self.namelist[rtd]
         self.index = [self.data[t][n]["name"] for n in range(len(self.data[t]))].index(self.name)
+        self.__class__._instances.add(self)
         return
 
     def getStuff(self):
@@ -42,6 +44,7 @@ testbackground = CharacterSheet("background")
 proficiencies = testrace.getStuff() + testclass.getStuff() + testbackground.getStuff()
 print(testrace.name + " " + testclass.name + " " + testbackground.name)
 print(proficiencies)
+print(CharacterSheet._instances)
 
 PrettyPrinter(indent=2).pprint(testrace.__dict__)
 PrettyPrinter(indent=2).pprint(testclass.__dict__)
