@@ -16,19 +16,18 @@ def statsRoller():
 
 def listShuffler(data, count):
     random.shuffle(data)
-    data = [data[x] for x in range(count)]
-    return data
+    return [data[x] for x in range(count)]
 
 def getStuff(t, pick):
     file = "data/" + t + ".json"
     with codecs.open(file, "r", "utf-8-sig") as data_file:
         data = json.load(data_file)
         profs = []
-        entries = []
+#        entries = []
         fnl = [data[t][n]["name"] for n in range(len(data[t]))]
         if t == "race":
             raceSkillData = data["race"][fnl.index(pick)]
-            entries.append(raceSkillData["entries"])
+#            entries.append(raceSkillData["entries"])
             if "proficiency" in raceSkillData:
                 profs.append(raceSkillData["proficiency"])
         if t == "class":
@@ -38,7 +37,7 @@ def getStuff(t, pick):
                 profs.extend(listShuffler(classSkillData["from"], classSkillData["choose"]))
             else:
                 profs.extend(data[t][fnl.index(pick)]["startingProficiencies"])
-            savingThrowData = [data["class"][fnl.index(pick)]["proficiency"][x].title() + " Saving Throws" for x in range(2)]
+            savingThrowData = [classStuff["proficiency"][x].title() + " Saving Throws" for x in range(2)]
             profs.extend(savingThrowData)
         if t == "background":
             backgroundSkillData = data[t][fnl.index(pick)]["skillProficiencies"]

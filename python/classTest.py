@@ -2,7 +2,7 @@ import random, json, codecs
 from testFunctions import listShuffler
 from pprint import *
 
-class CharacterSheet:
+class CharacterSheet(object):
     "For learning"
     _instances = set()
 
@@ -18,7 +18,7 @@ class CharacterSheet:
         self.__class__._instances.add(self)
         return
 
-    def getStuff(self):
+    def getProfs(self):
         self.profs = []
         if self.t == "race":
             raceSkillData = self.data["race"][self.index]
@@ -41,11 +41,14 @@ class CharacterSheet:
 testrace = CharacterSheet("race")
 testclass = CharacterSheet("class")
 testbackground = CharacterSheet("background")
-proficiencies = testrace.getStuff() + testclass.getStuff() + testbackground.getStuff()
+proficiencies = testrace.getProfs() + testclass.getProfs() + testbackground.getProfs()
 print(testrace.name + " " + testclass.name + " " + testbackground.name)
 print(proficiencies)
-print(CharacterSheet._instances)
 
-PrettyPrinter(indent=2).pprint(testrace.__dict__)
-PrettyPrinter(indent=2).pprint(testclass.__dict__)
-PrettyPrinter(indent=2).pprint(testbackground.__dict__)
+print(list(CharacterSheet._instances)[0].__dict__)
+
+
+
+#PrettyPrinter(indent=2).pprint(testrace.__dict__)
+#PrettyPrinter(indent=2).pprint(testclass.__dict__)
+#PrettyPrinter(indent=2).pprint(testbackground.__dict__)
