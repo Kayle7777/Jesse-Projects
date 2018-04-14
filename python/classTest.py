@@ -34,9 +34,47 @@ class CharacterSheet(object):
         if self.t == "background":
             self.profs.append(self.data[self.t][self.index]["skillProficiencies"])
 
-        del self.data, self.namelist # we are done with the huge dicts "data" and "namelist" for now
+#        del self.data, self.namelist # we are done with the huge dicts "data" and "namelist" for now
 
         return self.profs
+
+    def pushJson(self):
+        jsonPush = {}
+#        jsonPush ["Stats"] = {
+#       "beforeRaceBonus": statslist,
+#        "afterRaceBonus": racialStats(raceStuff)[0]
+#        }
+        jsonPush [self.t.title()] = {
+            self.t + "name": self.name,
+            self.name + "Proficiencies" = self.profs,
+
+        }
+
+        if self.t == "race"
+            jsonPush [self.t.title()] = {
+            "name": self.name,
+            "raceProficiencies": self.profs
+            }
+        elif self.t =="Class"] = {
+        "name": classStuff,
+        "subclass": None,
+        "classProficiencies": getStuff("class", classStuff)
+        }
+        jsonPush ["Background"] = {
+        "name": backgroundStuff,
+        "backgroundProficiencies": getStuff("background", backgroundStuff)
+        }
+
+        if featStuff != None:
+            jsonPush ["Feat"] = {
+            "name": featStuff
+            }
+
+        #PrettyPrinter(indent=2).pprint(jsonPush)
+
+        with open("sheets/" + raceStuff + " " + classStuff + " " + backgroundStuff + ".json", "w") as f:
+            f.write(json.dumps(jsonPush, indent=2))
+
 
 testrace = CharacterSheet("race")
 testclass = CharacterSheet("class")
