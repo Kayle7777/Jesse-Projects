@@ -1,0 +1,22 @@
+Node.js -- An run-time environment that executes Javascript server-side, rather than client side. I.E. instead of executing client-side javascript in a user's web browser, Node.Js runs scripts server-side to produce dynamic web page content before the page is sent to the user's browser.
+
+React.js -- The main purpose of React is to be fast, scalable, and simple. It works only on user interfaces in application. This corresponds to view in the MVC template. It can be used with a combination of other JavaScript libraries or frameworks, such as Angular JS in MVC -- (Possibly creating reusable bits of code that can be used elsewhere, easily copy pasted?)
+
+MVC -- "Model-View-Controller" this is a design philosophy that emphasizes separation of functional concerns when designing and building web applications. The idea is to have a clean cut separation of functional concerns, to have a more intelligible / readable code.
+
+REST APIs -- "REpresentational State Transfer", an architectual style -- REST-compliant web services allow the requesting systems to access and manipulate textual representations of web resources by using a uniform and predefined set of stateless operations. (The idea is possibly that an "acknowledgement packet receipt" is not required by the receiver of data). The server is not required to allocate storage to deal with conversations in progress
+
+TSDB -- "Time Series Database",  a software system that is optimized for handling time series data, arrays of numbers indexed by time (a datetime or a datetime range). In some fields these time series are called profiles, curves, or traces.
+
+ETL Processes -- "Extract, Transform, and Load", refers to a process in database usage and especially in data warehousing that: Extracts data from homogeneous or heterogeneous data sources. Transforms the data for storing it in proper format or structure for querying and analysis purpose. (Script that scrapes data from a webpage and automatically places it in a JSON format using keywords?)
+
+AWS Lambda -- AWS Lambda is an event-driven, serverless computing platform provided by Amazon as a part of the Amazon Web Services. It is a compute service that runs code in response to events and automatically manages the compute resources required by that code.
+
+Agile software development -- Agile software development describes an approach to software development under which requirements and solutions evolve through the collaborative effort of self-organizing and cross-functional teams and their customer(s)/end user(s). It advocates adaptive planning, evolutionary development, early delivery, and continual improvement, and it encourages rapid and flexible response to change. 
+
+	While there is significant anecdotal evidence that adopting agile practices and values improves the agility of software professionals, teams and organizations; some empirical studies have found no scientific evidence.
+	
+SSH -- Secure Shell (SSH) is a cryptographic network protocol for operating network services securely over an unsecured network. The best known example application is for remote login to computer systems by users. (I've used this to run my GUI-less linux server, just didn't quite understand exactly what it was.)
+
+DOM -- "Document Object Model", is a programming interface for HTML and XML documents. It represents the page so that programs can change the document structure, style, and content. The DOM represents the document as nodes and objects. That way, programming languages can connect to the page.
+	

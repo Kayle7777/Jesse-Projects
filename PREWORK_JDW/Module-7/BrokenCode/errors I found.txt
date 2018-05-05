@@ -1,0 +1,11 @@
+Found loads of errors. 
+
+Issues with the wikipedia link
+Paragraphs not formatted
+HTML not formatted to correctly (</divs> all over the place)
+Things out of order
+Things linking to the wrong function on logic.js
+
+formatting issues on logic.js
+
+lots of others
