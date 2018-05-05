@@ -46,7 +46,7 @@ class CharacterSheet(object):
 #        }
         jsonPush [self.t.title()] = {
             self.t + "name": self.name,
-            self.name + "Proficiencies" = self.profs,
+            self.name + "Proficiencies" = self.profs
 
         }
 
