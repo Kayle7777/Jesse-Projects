@@ -14,6 +14,7 @@
 
 function reDiv(id, ud) {
   let div = document.getElementById(id);
+  // To parse the string "150px" into the int 150
   let h = parseInt(div.style.height)+ud;
   div.style.height = h + "px";
   div.style.width = h + "px";
