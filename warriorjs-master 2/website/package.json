@@ -1,0 +1,21 @@
+{
+  "name": "warriorjs-website",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "docusaurus-start",
+    "build": "docusaurus-build",
+    "publish-gh-pages": "docusaurus-publish",
+    "write-translations": "docusaurus-write-translations",
+    "version": "docusaurus-version",
+    "rename-version": "docusaurus-rename-version",
+    "crowdin-upload": "crowdin upload sources --auto-update -b master",
+    "crowdin-download": "crowdin download -b master"
+  },
+  "devDependencies": {
+    "docusaurus": "^1.0.15"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.1"
+  }
+}

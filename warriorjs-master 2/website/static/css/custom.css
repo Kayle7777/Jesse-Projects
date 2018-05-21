@@ -1,0 +1,192 @@
+/*
+ * Global
+ */
+
+blockquote {
+  background: #eceff4;
+  border-left-color: #e5e9f0;
+}
+
+/*
+ * Links
+ */
+
+.mainContainer a {
+  color: $accentColor;
+}
+
+.mainContainer .button {
+  background: transparent;
+  border: 1px solid $primaryColor;
+  color: $primaryColor;
+}
+
+.mainContainer .button:hover {
+  background: $primaryColor;
+  color: #eceff4;
+}
+
+/*
+ * Header
+ */
+
+.fixedHeaderContainer .headerWrapper .logo {
+  height: 50%;
+}
+
+@media only screen and (max-width: 375px) {
+  .fixedHeaderContainer .headerWrapper .logo {
+    display: block;
+  }
+}
+
+/* Languages */
+
+#languages-menu {
+  font-size: 0px;
+  padding: 0;
+}
+#languages-menu .languages-icon {
+  margin: 0;
+  padding: 6px 10px;
+}
+#languages-dropdown {
+  width: auto;
+  right: 0;
+}
+@media only screen and (min-width: 1024px) {
+  .nav-site > span > li {
+    position: relative;
+  }
+}
+
+/* Search */
+
+.reactNavSearchWrapper input#search_input_react {
+  background-color: $secondaryColor;
+}
+
+@media only screen and (max-width: 735px) {
+  .reactNavSearchWrapper input#search_input_react {
+    background-color: $secondaryColor;
+  }
+}
+
+/*
+ * Docs Sidebar
+ */
+
+.docsNavContainer nav.toc .toggleNav .navItem:hover {
+  color: $accentColor;
+}
+
+.docsNavContainer nav.toc .toggleNav .navItem.navItemActive {
+  color: $accentColor;
+}
+
+/*
+ * Footer
+ */
+
+.footerSection {
+  background: $primaryColor !important;
+}
+
+.footerSection .sitemap .nav-home {
+  height: 80px;
+  margin: 0px 20px 0 0;
+  padding: 7px;
+  width: 80px;
+}
+
+.footerSection .sitemap .nav-home img {
+  transform-origin: left;
+  transform: translate(50%, -50%) rotate(90deg);
+}
+
+@media only screen and (max-width: 735px) {
+  .footerSection .sitemap div {
+    margin: 0 0 20px 0;
+  }
+
+  .footerSection .sitemap .nav-home img {
+    transform: translate(0, 50%);
+  }
+}
+
+.footerSection .sitemap iframe {
+  margin: 2px -10px;
+  padding: 0px 10px;
+}
+
+/*
+ * Home
+ */
+
+.homeContainer {
+  background: $primaryColor;
+}
+
+.homeContainer .homeWrapper .projectTitle img {
+  height: 100%;
+  margin-bottom: 0.5em;
+  max-height: 200px;
+}
+
+.homeContainer .homeWrapper .projectTitle small {
+  color: $accentColor;
+}
+
+.homeContainer .homeWrapper .button {
+  border-color: $accentColor;
+  color: $accentColor;
+}
+
+.homeContainer .homeWrapper .button:hover {
+  background: $accentColor;
+  color: $primaryColor;
+}
+
+.homeContainer .homeWrapper .button.primary {
+  background: $accentColor;
+  color: $primaryColor;
+}
+
+.mainContainer .productShowcaseSection,
+.mainContainer .container {
+  background: #e5e9f0;
+}
+
+.mainContainer .lightBackground {
+  background: #eceff4;
+}
+
+/* Quick Start */
+
+.quickStart ol {
+  list-style: none;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 1em 0;
+  text-align: left;
+}
+
+.quickStart ol li {
+  margin-bottom: 42px;
+}
+
+.quickStart ol li::before {
+  color: $accentColor;
+  font-size: 42px;
+  margin-right: 10px;
+}
+
+.quickStart ol li:nth-of-type(1)::before {
+  content: '1.';
+}
+.quickStart ol li:nth-of-type(2)::before {
+  content: '2.';
+}
+.quickStart ol li:nth-of-type(3)::before {
+  content: '3.';
+}
