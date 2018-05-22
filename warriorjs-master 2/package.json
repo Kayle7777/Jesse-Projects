@@ -44,5 +44,8 @@
       "prettier --write",
       "git add"
     ]
+  },
+  "dependencies": {
+    "uniq": "^1.0.1"
   }
 }

@@ -1,7 +1,6 @@
-
+<script src="./thoughts.js"></script>
 
 class Player {
-  import {Thoughts} from './thoughts'
   constructor() {
     this.health = 20;
   }
@@ -13,8 +12,13 @@ class Player {
   }
 // it seems .think is a way to execute functions about stuff
   playTurn(warrior) {
-    let healthStatus = warrior.think(this.isInjured())
-    if (healthStatus = "I am fine") {}
+    let nearMe = Thoughts.feeler(n,e,s,w)
+    let healthStatus = warrior.think(this.isInjured());
+    if (healthStatus = "I am fine") {
+      for (x in Thoughts.feelings) {
+        warrior.think(x);
+      }
+    }
   }
 
 }
