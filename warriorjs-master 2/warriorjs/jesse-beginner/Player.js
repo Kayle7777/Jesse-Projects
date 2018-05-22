@@ -1,9 +1,20 @@
+
+
 class Player {
+  import {Thoughts} from './thoughts'
+  constructor() {
+    this.health = 20;
+  }
+
+  isInjured(Player) {
+    if (this.health < 20) {
+      return "I am injured"
+    } else {return "I am fine"}
+  }
+// it seems .think is a way to execute functions about stuff
   playTurn(warrior) {
-      warrior.feel('left');
-      warrior.feel('right');
-      if (warrior.feel('forward').isUnit()) {
-        warrior.attack();
-      } else {warrior.walk('forward')}
-      }
-    }
+    let healthStatus = warrior.think(this.isInjured())
+    if (healthStatus = "I am fine") {}
+  }
+
+}
