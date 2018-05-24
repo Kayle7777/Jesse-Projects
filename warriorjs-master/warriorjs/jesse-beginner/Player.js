@@ -3,7 +3,7 @@ class Player {
     this.health = 20;
   }
 
-  thoughts(x,y) {
+  vector(x,y) {
     let directions = [];
 
     for (var i = 0; i < x.length; i++) {
@@ -16,20 +16,24 @@ class Player {
 
   isInjured(Player) {
     if (this.health < 20) {
-      return "I am injured"
-    } else {return "I am fine"}
+      return "I am injured."
+    } else {return "I am not injured."}
   }
 // it seems .think is a way to execute functions about stuff
   playTurn(warrior) {
     let healthStatus = warrior.think(this.isInjured());
     if (healthStatus = "I am fine") {
-      let x = this.thoughts(['forward', 'right', 'backward', 'left'], warrior);
+      let x = this.vector(['forward', 'right', 'backward', 'left'], warrior);
+
       // try thinking Object.keys(x) to list object properties
       // x properties getLocation,getUnit,isEmpty,isStairs,isUnit,isWall
       // x is now a list of objects
       // warrior.think('I am thinking ' + Object.keys(x[0]))
+      let names = [];
+      for (var i = 0; i < x.length; i++) {names.push(x[i].name)}
+      warrior.think("Now I'm going to think if " + names + "are empty...")
       for (var i = 0; i < x.length; i++){
-        warrior.think('I am thinking ' + x[i].isEmpty())
+        warrior.think('I am thinking ' + x[i].isEmpty() + ".")
       }
       }
     }
