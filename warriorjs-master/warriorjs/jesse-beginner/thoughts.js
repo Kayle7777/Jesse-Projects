@@ -1,4 +1,4 @@
-export class Thoughts {
+class Thoughts {
   let this.feelings = [];
   function feeler(context) {
     var defaults = {
