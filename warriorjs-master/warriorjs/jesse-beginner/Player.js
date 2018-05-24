@@ -4,9 +4,14 @@ class Player {
   }
 
   thoughts(x,y) {
+    let directions = [];
+
     for (var i = 0; i < x.length; i++) {
-      return y.feel(x[i]);
-    }
+      directions[i] = y.feel(x[i]);}
+    for (var i = 0; i <x.length; i++) {
+      directions[i].name = x[i];}
+
+    return directions
   }
 
   isInjured(Player) {
@@ -21,7 +26,11 @@ class Player {
       let x = this.thoughts(['forward', 'right', 'backward', 'left'], warrior);
       // try thinking Object.keys(x) to list object properties
       // x properties getLocation,getUnit,isEmpty,isStairs,isUnit,isWall
-      warrior.think('I am thinking ' + x.isEmpty())
+      // x is now a list of objects
+      // warrior.think('I am thinking ' + Object.keys(x[0]))
+      for (var i = 0; i < x.length; i++){
+        warrior.think('I am thinking ' + x[i].isEmpty())
+      }
       }
     }
 }
