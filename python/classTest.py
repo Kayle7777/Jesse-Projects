@@ -86,6 +86,7 @@ print(proficiencies)
 print(list(CharacterSheet._instances)[0].__dict__)
 
 
+#new comment
 
 #PrettyPrinter(indent=2).pprint(testrace.__dict__)
 #PrettyPrinter(indent=2).pprint(testclass.__dict__)
