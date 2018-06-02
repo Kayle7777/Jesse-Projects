@@ -32,9 +32,14 @@ class Player {
     // warrior.think('I am thinking ' + Object.keys(x[0]))
 
     for (var i = 0; i < x.length; i++) {this.names.push(x[i].name)}
-    warrior.think("Now I'm going to think if " + this.names + " are empty...")
-    for (var i = 0; i < x.length; i++){
-      warrior.think(x[i].name + ' is ' + x[i].isEmpty() + ".")}
-//      }
+    warrior.think(this.names[0])
+
     }
-}
+
+
+
+
+    // warrior.think("Now I'm going to think if " + this.names + " are empty...")
+    // for (var i = 0; i < x.length; i++){
+    //   warrior.think(x[i].name + ' is ' + x[i].isEmpty() + ".")}
+    }
